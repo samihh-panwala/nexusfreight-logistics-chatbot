@@ -1,0 +1,254 @@
+Page 1 of 7 | Allcargo Logistics — Internal Reference
+Warehousing & Contract Logistics Reference
+How goods are stored, handled, and managed between transport legs — facility types, regulatory
+categories, and the value-added services that make up contract logistics
+1. What Warehousing and Contract Logistics Cover
+Warehousing is the storage of goods between two points in a supply chain, whether that gap is a few hours
+between unloading a container and loading it onto an outbound truck, or several months of seasonal
+stock-building ahead of a peak sales period. Contract logistics extends beyond simple storage to cover the
+full set of activities a business would otherwise have to run itself: receiving, put-away, inventory
+management, order picking, packing, labelling, and onward dispatch, typically carried out under a
+multi-year agreement rather than a one-off booking. The distinction matters commercially, because a
+warehousing contract is usually priced on space and duration, while a contract logistics agreement is
+priced on throughput, service levels, and the specific activities performed on the goods while they are in
+custody.
+A business chooses to outsource warehousing and contract logistics for reasons that go beyond simply not
+wanting to run a warehouse. Building and operating a facility ties up capital in land, racking, handling
+equipment, and a trained workforce, all of which are difficult to scale up or down as demand shifts through
+the year. A logistics provider that already operates multiple facilities can absorb a client's seasonal peak
+within existing capacity, share specialised equipment such as reach trucks or temperature-controlled
+chambers across several clients, and offer a service level agreement backed by trained staff and an
+existing warehouse management system, rather than requiring the client to build all of that from scratch.
+The commercial relationship between warehousing and contract logistics is also worth understanding as a
+spectrum rather than two entirely separate offerings. At the simplest end sits pure space rental, where a
+client leases square footage or pallet positions and handles all the receiving, picking, and dispatch work
+with its own staff. At the other end sits a fully managed contract logistics operation, where the provider's
+own staff, systems, and equipment perform every physical touch on the goods, and the client interacts with
+the operation almost entirely through data — stock levels, order status, and service-level reporting —
+rather than through any physical presence at the facility. Most real arrangements sit somewhere between
+these two ends, with the specific mix of self-managed and provider-managed activity negotiated according
+to what the client's own organisation is best placed to do internally.
+2. Types of Warehousing Facilities
+Not every facility that stores goods performs the same function, and the terminology used across the
+industry reflects real differences in location, regulatory status, and the kind of cargo each is built to handle.
+Choosing the right facility type for a given shipment is less about which option is generically “better” and
+more about matching the facility's function to the specific stage a shipment is at and the nature of the cargo
+itself. A shipment still awaiting customs clearance has no practical use for a general distribution
+warehouse, since that facility type is not licensed or equipped to hold goods under bond or manage a
+customs examination. Equally, cargo that has already cleared customs and simply needs to reach a retail
+shelf quickly gains little from sitting in a CFS, whose systems and staffing are built around
+customs-adjacent activity rather than fast retail throughput. Understanding which facility type a shipment is
+currently sitting in is therefore one of the fastest ways to understand what is actually happening to it at that
+Page 2 of 7 | Allcargo Logistics — Internal Reference
+moment — whether it is awaiting a regulatory process, awaiting onward transport arrangement, or simply
+moving through routine distribution.
+General and Distribution Warehouses
+These are the most common facility type: open-market storage used for domestic goods that have already
+cleared customs, or that never needed to. A distribution warehouse is usually positioned close to a
+consumption centre or a major road and rail corridor, and is built around fast inbound and outbound
+movement rather than long-term storage, since the goods passing through are typically destined for retail
+shelves, e-commerce fulfilment, or onward manufacturing within days or weeks.
+Container Freight Stations and Inland Container Depots
+A Container Freight Station, commonly abbreviated CFS, is a facility located near a port where containers
+are stuffed, destuffed, and consolidated, and where customs examination of cargo frequently takes place
+before release. An Inland Container Depot, or ICD, performs a similar function but is located away from the
+coast, closer to inland manufacturing or consumption hubs, and is connected to the port by rail or road so
+that containers can be customs-cleared without the cargo ever having to travel to the port itself. Both
+facility types sit at the intersection of warehousing and customs administration, and a shipment's dwell time
+is frequently measured from the moment it enters one of these facilities.
+Cold Storage and Temperature-Controlled Facilities
+Perishable cargo — pharmaceuticals, fresh produce, dairy, and certain chemicals — requires storage
+within a defined temperature band, monitored continuously rather than checked periodically. These
+facilities carry higher construction and running costs than ambient warehousing because of the
+refrigeration plant, insulated construction, and backup power required to maintain the cold chain during a
+grid outage, and they are typically priced accordingly.
+3. Bonded Warehousing versus Open Warehousing
+The single most consequential distinction in warehousing for an import or export business is whether a
+facility is bonded or open, because this determines when import duty falls due and how much flexibility the
+cargo owner has while goods are in storage.
+Bonded Warehousing
+A bonded warehouse is a facility licensed by the customs authority to store imported goods before duty
+has been paid. Goods entering a bonded facility are placed under a customs bond, meaning duty and
+applicable taxes are deferred until the goods are actually withdrawn for domestic consumption, rather than
+becoming payable the moment the goods land in the country. This is genuinely useful for a business that
+imports in bulk but sells gradually: duty is paid only against the portion of stock actually released to the
+market, which improves cash flow considerably compared with paying duty on the full consignment up
+front. Bonded storage is equally common for re-export scenarios, where goods pass through a country
+without ever entering the domestic market and duty is therefore never triggered at all. The trade-off is
+administrative: bonded facilities operate under closer customs oversight, movement of goods in or out
+must be documented and, in many cases, authorised in advance, and there is typically a maximum period
+goods may remain under bond before duty becomes payable regardless of whether the goods have been
+sold.
+Page 3 of 7 | Allcargo Logistics — Internal Reference
+Open Warehousing
+An open, or duty-paid, warehouse stores goods that have already cleared customs and on which duty has
+been settled. Once goods reach this stage they are treated the same as any domestically produced stock:
+they can be moved, repacked, sold, or transferred between facilities without further customs involvement.
+Most day-to-day distribution and retail fulfilment activity happens out of open warehousing, since the
+customs process has already concluded by the time goods reach this stage of the supply chain.
+A business handling regular import volumes will often use both facility types in sequence: goods land and
+sit in a bonded facility while duty liability is assessed and deferred, and once a batch is released against a
+confirmed sale or a scheduled distribution run, that batch moves into open warehousing for onward
+handling. Structuring storage this way keeps duty payments aligned with actual cash inflow rather than
+with the date the goods happened to arrive in the country.
+The maximum period goods may remain under bond varies by jurisdiction and, in some cases, by
+commodity category, but it is never indefinite. Once that maximum bonded period is reached, customs
+authorities typically require duty to be paid regardless of whether the goods have been sold or are still
+awaiting a buyer, and goods left unclaimed beyond an even longer outer limit can, in some jurisdictions, be
+subject to disposal or auction by the customs authority itself. A business planning to use bonded storage
+as a deliberate cash-flow strategy should therefore track the bonded clock for each consignment as closely
+as it tracks the underlying sales forecast, since a shipment that sits under bond longer than planned
+converts an intentional deferral into an unplanned duty liability with very little additional warning before it
+comes due.
+4. Dwell Time — What It Is and Why It Matters
+Dwell time is the length of time cargo remains within a facility — a port terminal, a CFS or ICD, or a
+warehouse — between one movement event and the next, most commonly measured from the moment a
+container is discharged from a vessel to the moment it is gated out for onward delivery. It is one of the
+most closely watched metrics in contract logistics because it drives cost on both sides of the relationship:
+the facility operator, because storage space occupied by slow-moving cargo cannot be used for new
+inbound volume, and the cargo owner, because most facilities charge escalating storage fees the longer a
+container or consignment remains uncollected.
+Dwell time is driven by a mix of factors that are within a shipper's control and factors that are not. Within
+the shipper's control: how quickly import documentation is filed and duty is paid, whether the consignee
+has arranged onward transport in advance, and whether the paperwork accompanying the shipment is
+complete and consistent on first submission. Outside the shipper's control: how quickly customs completes
+an examination if the shipment is selected for one, congestion at the facility itself during a demand surge,
+and delays caused by other regulatory bodies, such as a plant quarantine or drug-testing authority, that
+must sign off on certain categories of cargo before release.
+Extended dwell time has consequences beyond the storage fees themselves. Facilities running near
+capacity because of slow-moving cargo experience knock-on congestion that increases dwell time for
+other, unrelated shipments passing through the same yard, and container lines that see their equipment
+tied up for longer than planned may apply detention charges on top of the facility's own storage fees. For
+this reason, most contract logistics agreements build dwell time targets directly into the service level
+agreement, with the provider responsible for flagging documentation gaps early enough that they do not
+become a release delay.
+Page 4 of 7 | Allcargo Logistics — Internal Reference
+Most facilities price storage on an escalating scale specifically to discourage long dwell times: an initial free
+period covers the time reasonably needed to complete customs formalities and arrange onward transport,
+after which a daily rate applies, and that daily rate frequently increases again after a second, longer
+threshold. This structure reflects the facility's own economics — a container sitting well past a reasonable
+clearance window is occupying space that could otherwise turn over several times for other customers —
+and it is also why a shipment that seems to have cleared customs without issue can still generate a
+meaningful storage bill if the consignee is slow to arrange final pickup. A customer surprised by a storage
+charge on an otherwise problem-free shipment has often simply exceeded the free period on the collection
+side rather than experienced any delay in the clearance process itself.
+5. Third-Party Logistics (3PL) Operations
+A third-party logistics provider, generally shortened to 3PL, takes over one or more physical logistics
+functions on a client's behalf — warehousing, transportation, or both — under an ongoing commercial
+arrangement rather than a single transaction. The defining feature of a 3PL relationship is that the provider
+takes physical custody and operational control of the client's goods, which distinguishes it from a freight
+forwarder or customs broker, whose role is arranging and documenting movement rather than physically
+handling and storing the goods.
+Core 3PL Functions
+bullet Inbound receiving and quality inspection — verifying that a delivery matches the purchase order or
+advance shipping notice before it is accepted into inventory.
+bullet Put-away and inventory management — placing goods in the correct storage location and
+maintaining an accurate, real-time record of stock on hand.
+bullet Order picking and packing — assembling individual customer or store orders from bulk inventory,
+and packing them to the client's specification.
+bullet Outbound dispatch and last-mile coordination — consolidating outbound loads and handing them to
+the appropriate transport mode, whether that is a full truckload carrier, a parcel network, or the
+client's own fleet.
+bullet Returns processing — receiving returned goods back into the facility, inspecting condition, and
+routing them to resale, refurbishment, or disposal as appropriate.
+The scope of a 3PL contract is negotiated activity by activity rather than assumed. A client running a lean
+e-commerce operation may want the provider to handle everything from receiving through to last-mile
+handover, while a manufacturer with its own distribution fleet may only want warehousing and outbound
+loading, keeping transport under its own control. Because pricing is usually tied to the specific activities
+performed and the volume passing through the facility, a clearly scoped contract at the outset avoids
+disputes later over what is and is not included in the agreed rate.
+It is also worth distinguishing a 3PL relationship from a fourth-party logistics, or 4PL, arrangement, since
+the two terms are sometimes used loosely. A 3PL provider physically executes the logistics activity itself —
+it is the entity whose warehouse the goods sit in and whose staff pick and pack the orders. A 4PL provider,
+by contrast, typically does not operate its own physical facilities at all; instead it manages and coordinates
+a network of underlying 3PL and transport providers on the client's behalf, acting as a single point of
+accountability across a multi-provider supply chain. A client with operations spanning several countries or
+several different 3PL partners may specifically want a 4PL layer on top to provide a single, consolidated
+Page 5 of 7 | Allcargo Logistics — Internal Reference
+view across all of them, whereas a client with a single facility and a single provider generally has no need
+for that additional layer.
+6. Value-Added Services in Contract Logistics
+Beyond storage and movement, many clients ask their logistics provider to perform light processing on
+goods while they are already in the facility, since doing so avoids an extra handling step and an extra
+transport leg elsewhere in the supply chain. These are generally described as value-added services, and
+the range on offer varies considerably between providers and facility types.
+bullet Kitting and assembly — combining several individual components into a single saleable unit, such
+as bundling an accessory with a primary product ahead of dispatch.
+bullet Labelling and re-labelling — applying country-specific compliance labels, barcodes, or
+retailer-mandated tags before goods leave the facility.
+bullet Quality control and inspection — checking a sample or the full batch of an inbound consignment
+against agreed specifications before it is accepted into saleable inventory.
+bullet Repackaging — breaking down bulk shipping packaging into retail-ready units, or the reverse,
+consolidating retail units into bulk cartons for a specific customer.
+bullet Reverse logistics and refurbishment — managing the return, inspection, and where appropriate the
+refurbishment or repackaging of goods sent back by end customers.
+Value-added services are typically priced separately from base storage and handling, since the labour and
+equipment involved vary widely by activity. A client evaluating a contract logistics proposal should look
+closely at how these services are costed individually rather than assuming they are bundled into a single
+all-in storage rate.
+7. Warehouse Management Systems and Technology
+A warehouse management system, or WMS, is the software layer that tracks every unit of inventory from
+the moment it is received to the moment it leaves the facility, and directs warehouse staff on where to
+place, pick, and move stock. In a facility of any meaningful size, a WMS is what makes it possible to know,
+at any given moment, exactly how much of a given item is on hand, where it is physically located, and
+which orders it has already been allocated against — information that would be effectively impossible to
+maintain reliably on paper or in a spreadsheet once volumes reach even a moderate scale.
+Barcode and radio-frequency scanning are the most common way a WMS captures movement in real time:
+a worker scans a location and an item together at every put-away, pick, and dispatch step, and the system
+updates its inventory record instantly rather than relying on a periodic manual count. Larger or more
+automated facilities extend this further with fixed scanning tunnels, conveyor-integrated weight and
+dimension checks, and in some cases automated storage and retrieval systems that remove manual
+handling from repetitive, high-volume picking tasks altogether.
+For a client, visibility into the WMS — typically through a client-facing portal or a regular data feed — is
+usually the single most valued piece of technology in a contract logistics relationship, since it lets the
+client's own planning and customer service teams answer stock and order status questions without calling
+the warehouse directly. Integration between the provider's WMS and the client's own order management
+system is increasingly treated as a baseline expectation rather than a premium add-on.
+Page 6 of 7 | Allcargo Logistics — Internal Reference
+The maturity of a facility's WMS also has a direct bearing on how accurately dwell time and stock accuracy
+can be reported back to a client. A facility relying on periodic manual counts can only ever report inventory
+as of the last count, with real accuracy degrading the longer the interval since that count. A facility with full
+barcode or RFID scanning at every movement step can instead report a stock position that is accurate to
+within minutes of the actual physical state of the warehouse, which matters considerably for a client trying
+to make same-day fulfilment or replenishment decisions. When evaluating a prospective provider, the
+specific scanning technology in use at the point of receiving, put-away, and picking is usually a better
+indicator of true system accuracy than the WMS software brand name alone, since two facilities running
+the same software can still differ substantially in how consistently their staff actually use it at every
+touchpoint.
+8. Safety, Compliance, and Quality Standards
+A warehouse handling third-party goods carries obligations that go beyond simply keeping the building
+secure. Fire safety systems, appropriate racking design and load limits, trained forklift and reach-truck
+operators, and clearly marked pedestrian and vehicle routes within the facility are baseline requirements,
+and larger facilities are typically certified against recognised safety and quality management standards that
+are audited on a recurring basis rather than assessed once at commissioning.
+Facilities handling regulated categories of goods — pharmaceuticals, hazardous chemicals, or bonded
+cargo under customs supervision — operate under additional layers of control specific to that category,
+such as segregated storage areas, restricted access logs, and documented handling procedures that a
+general-purpose warehouse would not need to maintain. A client evaluating a facility for regulated cargo
+should confirm the specific certifications and licences the facility holds for that category, rather than
+assuming general warehousing competence extends automatically to specialised handling requirements.
+Insurance coverage is a related but separate matter from safety certification. A contract logistics
+agreement should specify whether the provider's insurance covers the full declared value of goods in
+storage, the claims process in the event of loss or damage, and whether the client is expected to carry
+supplementary cargo insurance of its own.
+It is worth being explicit that safety certification and insurance coverage answer two different questions and
+neither substitutes for the other. A facility's safety certification speaks to how well the operator manages
+physical risk — the likelihood that a fire, structural failure, or handling accident occurs in the first place.
+Insurance coverage speaks to what happens financially if a loss occurs despite those precautions, and it is
+entirely possible for a well-certified, well-run facility to still carry insurance limits that fall short of a client's
+actual stock value, particularly during a seasonal peak when inventory on hand is unusually high. A client
+should review both separately, and should specifically confirm whether the facility's standard insurance
+policy caps the payout per incident, per client, or per square metre of storage, since any of these caps
+could leave a genuine gap relative to the client's own declared stock value at any given point in time.
+Taken together, the facility types, regulatory categories, and service models covered in this reference
+describe a continuum a shipment typically moves along rather than a set of unrelated options: cargo
+frequently starts in a CFS or ICD for customs processing, may pass through bonded storage while duty
+liability is deferred, and ultimately reaches open warehousing or a distribution centre for final fulfilment,
+with a 3PL provider potentially managing several of these stages under a single contract logistics
+agreement. Recognising where in this continuum a specific shipment currently sits is usually the fastest
+way to understand both what has already happened to it and what remains before it reaches its final
+Page 7 of 7 | Allcargo Logistics — Internal Reference
+destination.
+This guide is a summary reference for warehousing and contract logistics practice. Specific facility
+certifications, bonded storage periods, and service level terms should be confirmed directly with the
+relevant facility or provider for any particular arrangement.

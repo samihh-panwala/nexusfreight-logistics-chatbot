@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Secrets
+config.py
+.env
+
+# Chroma
+chroma_db/
+
+# Generated files
+rag/chunks.json
+
+# Zip files
+*.zip
+
+# Tests
+test*
+tests/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

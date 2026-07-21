@@ -262,3 +262,21 @@ def search_faq(keyword):
         return response.data
     except Exception:
         return None
+
+
+def count_shipments_by_status(status):
+
+    try:
+
+        response = (
+            supabase.table("shipments")
+            .select("*")
+            .eq("Shipment_Status", status)
+            .execute()
+        )
+
+        return len(response.data)
+
+    except Exception:
+
+        return 0

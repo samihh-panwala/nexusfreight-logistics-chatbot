@@ -1,0 +1,275 @@
+Page 1 of 6 | Allcargo Logistics — Internal Reference
+Allcargo Logistics — Company Profile & Services
+Reference document for the customer-support chatbot · Company background, services, and FAQs
+1. Company Snapshot
+Field
+Details
+Full name
+Allcargo Logistics Limited (formerly Allcargo Global Logistics)
+Founded
+1993, by Shashi Kiran Shetty
+Operations began
+1994, as a cargo handling operator at Jawaharlal Nehru Port (JNPT), Mumbai
+Headquarters
+Mumbai, India
+Founder / Chairman
+Shashi Kiran Shetty
+Core segments
+International supply chain (LCL/FCL, freight forwarding), Container Freight Stations
+(CFS), Contract Logistics, Logistics Parks, Express Distribution
+Global reach
+Operations and trade lane network spanning around 180 countries through its
+subsidiary ECU Worldwide
+Key subsidiary
+ECU Worldwide (formerly ECU-Line) — non-vessel operating common carrier
+(NVOCC) network
+Listing
+Publicly listed in India (BSE/NSE) under the ticker ALLCARGO
+2. Company Overview
+Allcargo Logistics is an Indian integrated logistics company headquartered in Mumbai. It began in 1994 as a
+cargo-handling operator at Jawaharlal Nehru Port and has grown into one of the largest players in India's
+international supply-chain and freight-forwarding sector, with a global network spanning roughly 180 countries
+through its subsidiary ECU Worldwide.
+The company positions itself as a customer-centric, technology-driven logistics provider, offering everything from
+small less-than-container-load shipments to full container loads, warehousing, and last-mile express delivery. It
+operates across multiple business lines rather than a single service, which is what lets it serve customers ranging
+from small exporters to large industrial manufacturers.
+This breadth matters in practice because a single customer's shipment can touch several of these business lines at
+once. A mid-sized exporter, for instance, might use Allcargo's international supply chain business to consolidate an
+LCL shipment bound for Europe, rely on a CFS facility at the port of origin for export documentation and bonded
+storage, and separately use the express distribution network to move finished goods domestically to the port in the
+first place. Understanding the company as a connected set of services, rather than isolated business units, is
+important context for answering a customer's question accurately, since a query that sounds like it belongs to one
+service line often has a natural connection to another.
+The customer base spans a wide range of shipment sizes and industries as a direct result of this multi-line structure.
+A small exporter shipping a handful of pallets of textiles typically uses LCL consolidation and customs brokerage
+support without ever needing a dedicated warehouse relationship. A large automotive or chemicals manufacturer, by
+contrast, is more likely to be a contract logistics customer first — using an Allcargo industrial park for ongoing
+warehousing and distribution — and only occasionally an international freight customer when a specific shipment
+needs to cross a border. A retailer running e-commerce fulfilment may use the express distribution network almost
+exclusively for last-mile delivery, with little or no involvement in the international or CFS side of the business at all.
+Page 2 of 6 | Allcargo Logistics — Internal Reference
+Recognizing which of these customer profiles a given question is coming from is often the fastest way to identify
+which service line, and which supporting document in this reference set, actually applies.
+3. Company History & Milestones
+Allcargo's story starts with founder Shashi Kiran Shetty, who began his career in logistics as a trainee before starting
+his first venture, Trans India Freight Services. In 1993 he founded what would become Allcargo Logistics, initially
+focused on customs house agency and freight forwarding at JNPT, Mumbai.
+A pivotal early move was becoming the India agent for Antwerp-based ECU-Line in 1995, which introduced the
+company to Less-than-Container-Load (LCL) consolidation — combining multiple smaller shipments into a single
+container to cut costs. This became a core part of the business. Below is a condensed timeline of key milestones.
+Year
+Milestone
+1993
+Shashi Kiran Shetty founds the company in Mumbai.
+1994
+Operations begin at Jawaharlal Nehru Port (JNPT) as a customs house agent and freight
+forwarder.
+1995
+Antwerp-based ECU-Line appoints Allcargo as its India agent, marking its entry into
+Less-than-Container-Load (LCL) consolidation.
+2003
+First Container Freight Station (CFS) opens at JNPT.
+2004
+Company renamed Allcargo Global Logistics Private Limited.
+2006
+Company goes public (IPO oversubscribed over 7x); acquires ECU-Line outright, gaining a
+global ocean freight network.
+2007
+New CFS facilities open in Chennai and Mundra.
+2011
+Company renamed Allcargo Logistics Limited.
+2013
+Acquires US-based Econocaribe Consolidators and a stake in Netherlands-based FCL Marine
+Rotterdam.
+2016
+ECU-Line network rebranded globally as ECU Worldwide.
+2017
+New CFS opens in Kolkata; ECU360 digital booking and tracking platform launched.
+2018
+Enters logistics and industrial parks / warehousing under Allcargo Logistics Industrial Parks.
+2020
+Acquires a controlling stake in Gati Ltd., a major Indian express distribution company.
+2021
+Acquires 65% of Swedish logistics firm Nordicon for about $29 million.
+2023
+Shashi Kiran Shetty re-designated Executive Chairman; company marks 30 years in business;
+Gati rebranded AllcargoGati.
+2025
+AllcargoGati fully merges into the parent company, consolidating domestic express operations.
+Read together, these milestones show a consistent growth pattern: organic expansion of the core freight-forwarding
+and CFS business through the 2000s, followed by a wave of international acquisitions in the 2010s that extended the
+company's reach into Europe and the Americas, and a more recent push into domestic express distribution and digital
+platforms in the 2020s. A customer asking how long Allcargo has operated internationally, for example, can be
+pointed to the 2006 ECU-Line acquisition as the milestone that gave the company its first true global ocean freight
+network, rather than the company's 1993 founding, which was domestic in scope.
+4. Services Offered
+Page 3 of 6 | Allcargo Logistics — Internal Reference
+International Supply Chain (ISC)
+•
+Less-than-Container-Load (LCL) consolidation — Allcargo is one of the largest non-vessel operating common
+carriers (NVOCC) in this segment globally.
+•
+Full Container Load (FCL) / Neutral FCL freight forwarding.
+•
+Air freight forwarding and export/import handling.
+•
+Customs brokerage and documentation support.
+•
+Special cargo handling: hazardous (DG) cargo, ODC (over-dimensional cargo), reefer/temperature-controlled
+shipments, ISO tank services.
+In practice, LCL and FCL represent two different ways of buying container space rather than two different kinds of
+shipment. A customer with a small volume of cargo that would not fill a container on its own uses LCL, paying only for
+the space their cargo occupies while Allcargo consolidates it with other customers' cargo bound for the same
+destination. A customer with enough volume to fill a container outright books FCL instead, and pays for the whole
+container regardless of how full it is, in exchange for not having to share space or wait for consolidation. Neutral FCL
+forwarding extends this to customers who want Allcargo to manage the booking and documentation for a full
+container without Allcargo acting as the NVOCC of record.
+It is also worth being explicit about what a customs house agent and a freight forwarder actually do, since both terms
+describe Allcargo's earliest role at JNPT and both remain relevant to how the company operates today. A customs
+house agent is licensed to prepare and file the paperwork needed to clear cargo through customs on a shipper's
+behalf — declarations, duty calculations, and the physical presentation of documents to customs authorities. A freight
+forwarder arranges the actual movement of cargo between origin and destination, coordinating with carriers, ports,
+and warehouses, but does not necessarily own any of the ships, aircraft, or trucks involved. Allcargo has performed
+both roles since its earliest days at JNPT, and the CFS and ICD network described in Section 4 exists specifically to
+support the customs house agency side of that work.
+Container Freight Stations (CFS) & Inland Container Depots (ICD)
+•
+CFS facilities at JNPT (Mumbai), Chennai, Mundra, and Kolkata handling export/import cargo, bonded and open
+warehousing.
+•
+A joint-venture ICD at Dadri (National Capital Region) with Container Corporation of India (CONCOR).
+•
+Container maintenance, repair, and first/last-mile transportation to and from ports.
+A CFS functions as an off-dock extension of a port: containers are moved from the port to the CFS for customs
+examination, consolidation, deconsolidation, and storage, which relieves congestion at the port itself and gives
+exporters and importers more space and time to complete documentation. An ICD serves a similar function but is
+located further inland, allowing customs clearance to happen closer to a customer's own facility rather than requiring
+cargo to be moved all the way to a coastal port first. Allcargo's joint-venture ICD at Dadri, run with Container
+Corporation of India, gives customers in the Delhi NCR region this inland clearance option.
+Contract Logistics & Warehousing
+•
+Third-party logistics (3PL) — warehousing, distribution, and production logistics for manufacturers.
+•
+Logistics and industrial parks located in hubs including Hyderabad, Bengaluru, Ahmedabad, and the Delhi NCR.
+•
+Sector-specific solutions for chemicals, e-commerce, automotive, and retail supply chains.
+•
+Kitting, reusable packaging, and pre-production/ordering-and-replenishment services.
+Page 4 of 6 | Allcargo Logistics — Internal Reference
+This business line is distinct from the CFS and ICD network in that it is not tied to a customs clearance point at all — a
+manufacturer can use an Allcargo logistics park purely for ongoing warehousing and domestic distribution, with no
+export or import shipment involved. Sector-specific handling matters here because chemicals, for instance, require
+different storage, handling, and safety compliance than e-commerce parcels or automotive components, and
+Allcargo's contract logistics offering is built around accommodating those differences within the same network of
+parks.
+Kitting and reusable packaging services are worth explaining further, since they are less immediately self-explanatory
+than warehousing itself. Kitting refers to assembling individual components into a pre-packaged set — for example,
+bundling several related automotive parts into a single kit before they are shipped to an assembly line — which
+reduces handling steps for the manufacturer downstream. Reusable packaging programs, common in automotive and
+industrial supply chains, involve durable containers or crates that are returned and reused across multiple shipment
+cycles rather than discarded after a single use, reducing both packaging cost and waste over time.
+Express Distribution
+•
+Domestic surface and air express delivery across India (via the former Gati network, now merged into Allcargo).
+•
+Cash-on-delivery (COD), door-to-door delivery, and last-mile solutions, including an electric-vehicle fleet for
+first/last-mile delivery.
+Express distribution is the company's most customer-facing, retail-oriented business line, in contrast to the more
+business-to-business nature of ISC, CFS, and contract logistics. It is the business line most likely to generate direct
+end-consumer questions about delivery timing, cash-on-delivery availability, and last-mile tracking, since it is the part
+of Allcargo's operation an individual recipient is most likely to interact with directly.
+The 2020 acquisition of a controlling stake in Gati Ltd. is what gave Allcargo this domestic express capability in the
+first place, since the company's earlier growth had been concentrated in international freight forwarding and CFS
+operations rather than parcel-level domestic delivery. The subsequent 2023 rebranding to AllcargoGati and the full
+2025 merger into the parent company reflect a gradual integration of that acquired network into the core Allcargo
+brand, and a customer who previously dealt with Gati directly should now expect the same service to be presented
+under the Allcargo name.
+Digital Platform
+•
+ECU360 — an online platform for booking, real-time shipment tracking, and supply-chain visibility, relaunched in
+2017 as part of the company's digital-transformation push.
+ECU360 is the single platform that ties the other service lines together from a customer's point of view: the same
+booking reference created for an LCL or FCL shipment can be tracked through customs clearance at a CFS, and
+onward through final delivery, without the customer needing to contact each operational team separately. Any chatbot
+question about tracking a shipment, checking a booking status, or getting a real-time update should point the
+customer toward ECU360 as the primary self-service tool.
+5. Global Network & Corporate Structure
+Allcargo's international reach runs primarily through ECU Worldwide (formerly ECU-Line), its wholly owned NVOCC
+subsidiary, which connects thousands of trade lanes across roughly 180 countries. The company has grown its
+international footprint through acquisitions — including US-based Econocaribe Consolidators, a stake in FCL Marine
+Rotterdam, and a majority stake in Swedish logistics firm Nordicon.
+•
+Allcargo Supply Chain Limited — wholly owned subsidiary for contract logistics, warehousing, and distribution.
+•
+ECU Worldwide — wholly owned NVOCC / LCL and freight-forwarding network.
+Page 5 of 6 | Allcargo Logistics — Internal Reference
+•
+Nordicon AB — majority-owned Swedish logistics subsidiary (European network).
+•
+Former Gati / AllcargoGati — domestic express distribution business, fully merged into the parent company in
+2025.
+This structure means a customer's shipment is very often handled by more than one legal entity within the Allcargo
+group without the customer needing to be aware of the distinction — an LCL booking might be issued under ECU
+Worldwide as the NVOCC of record, while the domestic pickup and delivery legs are handled by the former Gati
+network now fully merged into the parent company. For chatbot purposes, the group should generally be presented to
+a customer as a single company, "Allcargo," unless a question specifically concerns which legal entity issued a
+particular shipping document.
+It is worth noting how each acquisition extended the network into a specific region rather than simply adding scale in
+the abstract. Econocaribe Consolidators, acquired in 2013, strengthened Allcargo's presence in the Americas and the
+Caribbean specifically, an origin and destination region the company had comparatively less direct presence in before
+that acquisition. The stake in FCL Marine Rotterdam, acquired the same year, gave the company a stronger foothold
+in one of Europe's largest container ports. Nordicon AB, acquired in 2021, extended the network into the Nordic
+countries. A customer asking whether Allcargo has direct presence in a specific region can generally be answered by
+tracing which of these acquisitions covers that part of the world, rather than relying only on the general 180-country
+figure.
+6. Leadership
+•
+Shashi Kiran Shetty — Founder and Executive Chairman of the Allcargo Group.
+•
+Ketan Kulkarni — Managing Director & Chief Executive Officer, Allcargo Logistics.
+The company's board also includes independent directors drawn from logistics, finance, and public-sector
+backgrounds, reflecting its status as a publicly listed company on India's stock exchanges.
+7. Mission, Vision & Values
+•
+Customer-first approach — described internally as staying customer-centric and proactive in every interaction.
+•
+Innovation — investing in digitally-enabled, well-governed logistics operations and encouraging fresh, disruptive
+thinking.
+•
+People and governance — building committed teams and upholding ethics, humility, and strong governance
+standards.
+•
+Sustainability — minimizing environmental impact, supporting research on sustainability, and acting as a
+responsible corporate citizen.
+These four values are reflected concretely elsewhere in the company's operations rather than existing only as a
+statement of intent: the customer-first principle is visible in the ECU360 self-service tracking platform, the innovation
+principle in the company's ongoing digital-transformation initiatives, and the sustainability principle in the
+electric-vehicle fleet described in the following section.
+8. Sustainability & CSR
+Allcargo has been building out ESG-linked initiatives across its operations, including deploying electric vehicles in its
+first- and last-mile delivery fleet — the company describes itself as the first Indian logistics company to onboard more
+than 100 electric vehicles for this purpose. It has also set up a dedicated Transformation Office focused on applying
+technology to long-standing logistics challenges.
+Page 6 of 6 | Allcargo Logistics — Internal Reference
+The electric-vehicle deployment is concentrated specifically in first- and last-mile delivery rather than long-haul
+transport, which reflects where electric vehicles are currently most practical within a logistics network: short, frequent
+urban and semi-urban delivery routes suit current EV range and charging infrastructure far better than long-distance
+highway haulage between cities or ports. This is a useful distinction to keep in mind if a customer asks specifically
+whether their long-haul shipment is being moved by an electric vehicle, since the current fleet deployment is focused
+on the delivery leg closest to the end recipient.
+9. Recognition & Scale
+•
+Operates as one of the largest NVOCCs in the LCL segment worldwide.
+•
+Runs four Container Freight Stations in India (JNPT, Chennai, Mundra, Kolkata) plus a joint-venture ICD at Dadri.
+•
+Publicly traded on Indian stock exchanges under the ticker ALLCARGO.
+•
+Celebrated 30 years of operations in 2023.
+Taken together, the four Container Freight Stations and the Dadri ICD give Allcargo a physical customs-clearance
+footprint spanning India's west coast (JNPT, Mundra), south (Chennai), east (Kolkata), and north (Dadri, serving the
+Delhi NCR), which is a useful geographic reference point when a customer asks which facility their shipment is likely
+to move through based on origin or destination within India.
+Compiled from publicly available company information for internal chatbot knowledge-base use. Verify time-sensitive details (leadership,
+financials, network size) against the official Allcargo Logistics website before publishing to production.

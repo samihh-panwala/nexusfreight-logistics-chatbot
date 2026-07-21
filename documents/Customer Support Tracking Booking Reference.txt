@@ -1,0 +1,235 @@
+Page 1 of 6 | Allcargo Logistics — Internal Reference
+Customer Support, Tracking & Booking Reference
+How customers book, track, and get help with an Allcargo shipment — platforms, processes, and
+FAQs
+1. The Customer Journey, End to End
+A customer's interaction with Allcargo generally follows a predictable sequence regardless of which service
+line is involved: a booking is made, the shipment moves through pickup, transit, and — where applicable
+— customs clearance, and the customer expects to be able to check status at any point along the way and
+reach a human being if something goes wrong. Support and tracking questions are rarely about the
+underlying logistics itself; they are almost always about visibility into a process the customer cannot
+otherwise see, which is why a fast, accurate status answer resolves the large majority of support contacts
+on its own.
+This reference covers the booking process, the ECU360 digital platform used for tracking and self-service,
+the domestic express delivery experience including cash-on-delivery, and the support and escalation
+channels available when a customer needs help beyond what self-service can provide.
+It is worth being explicit about why this reference exists as its own document rather than folding these
+topics into the service-line descriptions covered elsewhere. Booking, tracking, and support are not
+themselves a service line the way international freight forwarding or contract logistics are — they are the
+customer-facing layer that sits on top of every service line at once. A question about how to track a
+shipment is functionally identical whether the underlying cargo is an LCL consolidation bound overseas or
+a domestic express parcel, which is why this reference is organized around the customer's actual
+experience of interacting with the company rather than around any single business line's internal
+operations.
+2. Making a Booking
+A booking is the formal request that initiates a shipment, capturing the origin and destination, the cargo
+description and volume or weight, the service type required — LCL, FCL, air freight, or domestic express
+— and the customer's chosen Incoterm where the shipment is international. Once a booking is confirmed,
+it is assigned a booking reference, which is the single identifier a customer should use for every
+subsequent tracking, support, or documentation query concerning that shipment.
+Information Needed to Book a Shipment
+bullet Origin and destination addresses, including whether pickup or delivery is required at the door or at a
+terminal.
+bullet Cargo description, including whether the goods fall into a special handling category such as
+hazardous (DG) cargo, over-dimensional cargo (ODC), or temperature-controlled goods.
+bullet Total weight and volume, or container count for an FCL booking.
+bullet Preferred service type — LCL consolidation, FCL, air freight, or domestic express — and any
+specific transit time requirement.
+bullet For international shipments, the agreed Incoterm and the party responsible for arranging carriage
+and insurance under that term.
+Page 2 of 6 | Allcargo Logistics — Internal Reference
+Special cargo categories deserve particular attention at the booking stage rather than being discovered
+later, since hazardous, over-dimensional, or temperature-controlled cargo requires specific equipment,
+documentation, and sometimes advance regulatory notice that a standard booking does not trigger
+automatically. A booking that omits this detail can result in the wrong equipment being allocated, which is
+one of the more avoidable causes of a delay at the pickup stage.
+Booking Confirmation and Lead Times
+Once a booking is submitted, it moves through a confirmation step before it is treated as a firm shipment:
+space is checked against the requested service type and departure window, and for LCL consolidation
+specifically, the booking is matched against the consolidation schedule for the relevant trade lane, since an
+LCL shipment only moves once enough cargo has been gathered to justify loading that consolidation run.
+This is an important distinction for a customer comparing LCL against FCL timing: an FCL booking
+generally moves on a fixed schedule tied to vessel departures, while an LCL booking's actual departure
+can shift slightly depending on how quickly the consolidation for that specific lane fills.
+Lead time — the gap between booking confirmation and actual pickup or vessel departure — varies by
+service type and route, and a customer asking why one booking moved faster than a similar one previously
+is often seeing the practical effect of this variability rather than an inconsistency in service. Air freight
+bookings generally have the shortest lead times given the frequency of flight schedules, FCL bookings
+follow a fixed vessel schedule known at the time of booking, and LCL bookings carry the most schedule
+variability since they depend on consolidation timing specific to that lane and week.
+Cancellations and Changes to a Confirmed Booking
+A booking can generally be amended or cancelled before pickup with comparatively little friction, since no
+physical movement has yet occurred. Once a shipment has been picked up, and particularly once it has
+departed on its first transport leg, a change request — to routing, consignee, or delivery instructions —
+becomes materially more complex, since it may require re-issuing transport or customs documentation
+already filed under the original instructions. This is why post-departure change requests are treated as a
+support escalation rather than a self-service action: they typically require manual coordination with the
+carrier, the CFS or ICD handling the shipment, and in some cases customs, rather than a simple record
+update.
+3. Tracking a Shipment — The ECU360 Platform
+ECU360 is Allcargo's digital platform for online booking, real-time shipment tracking, and supply-chain
+visibility, relaunched in 2017 as part of the company's broader digital-transformation push. For any
+customer asking how to check the status of a shipment, ECU360 is the primary self-service answer, and it
+should be the first thing offered before a support escalation is considered.
+What ECU360 Shows
+bullet Current shipment status — booked, in transit, at customs, out for delivery, or delivered.
+bullet Milestone history — the sequence of events the shipment has already passed through, such as
+pickup, port departure, or arrival at a transshipment point.
+bullet Estimated time of arrival (ETA), updated as new schedule or routing information becomes available.
+bullet Document access, where applicable, for shipment-related paperwork the customer is entitled to view
+directly.
+Page 3 of 6 | Allcargo Logistics — Internal Reference
+A customer's shipment status should always be checked against ECU360 or the underlying shipment
+record before any other explanation is offered, since a status that looks unusual to a customer — for
+instance, a shipment that has not moved in several days — often has a specific, checkable reason
+attached to it, such as a customs examination or a scheduled transshipment wait, rather than being an
+unexplained gap in the system.
+Proactive Notifications
+Beyond on-demand tracking, ECU360 supports proactive status notifications tied to key milestones —
+booking confirmation, pickup completion, departure, arrival at destination, and out-for-delivery status — so
+that a customer does not need to actively check the platform to know when their shipment reaches an
+important stage. This matters for support volume specifically: a customer who has received a proactive
+notification confirming, for example, that their shipment has cleared customs is far less likely to submit a
+status enquiry than one who has received no update at all, even if both shipments are progressing
+identically. Encouraging a customer to enable notifications for a specific shipment is often a more durable
+fix for repeated status-checking behavior than answering the same status question multiple times in a row.
+Document Access Through the Platform
+Where applicable, ECU360 gives customers direct access to shipment-related documentation they are
+entitled to view, such as a copy of the Bill of Lading once issued, or the commercial invoice submitted at
+booking. This self-service document access is the appropriate first response to a customer asking for a
+copy of a specific document, rather than routing the request to a support agent to email manually, since
+the platform copy is both faster for the customer to obtain and guaranteed to be the current version on file.
+4. Domestic Express Delivery and Cash-on-Delivery
+Allcargo's domestic express distribution business, built on the former Gati network now fully merged into
+the parent company, provides surface and air express delivery across India, including door-to-door
+delivery and cash-on-delivery (COD) services. COD allows a recipient to pay for goods at the point of
+delivery rather than in advance, which is a common requirement for e-commerce and retail shipments
+where the buyer and seller do not have an established payment relationship.
+A COD shipment carries one additional dependency beyond a standard prepaid delivery: the delivery
+cannot be completed, and the shipment cannot be marked delivered, until the recipient actually makes the
+required payment to the delivery agent. A COD shipment showing as “out for delivery” for longer than
+expected is often waiting on the recipient to be available and ready to pay, rather than experiencing any
+problem with the shipment itself. Multiple failed delivery attempts on a COD shipment are typically handled
+under a defined re-attempt policy before the shipment is returned to the sender, and a customer asking
+about a stalled COD delivery should be checked against this re-attempt status specifically.
+The last-mile delivery fleet used for domestic express delivery includes an electric-vehicle component,
+which Allcargo has highlighted as part of its sustainability commitments — the company describes itself as
+the first Indian logistics company to onboard more than 100 electric vehicles for first- and last-mile delivery
+specifically.
+Delivery windows for domestic express shipments are typically communicated as part of the
+out-for-delivery notification rather than fixed at the time of booking, since the exact sequence in which a
+delivery agent reaches individual addresses on a route depends on real-time factors such as traffic and the
+number of stops already completed that day. A recipient expecting a delivery on a specific day should
+Page 4 of 6 | Allcargo Logistics — Internal Reference
+generally treat the out-for-delivery status itself as the more reliable signal that delivery is imminent, rather
+than relying solely on an estimated window communicated earlier in the shipment's journey, since that
+earlier estimate is naturally less precise the further in advance it was given.
+5. Support Channels and When to Escalate
+Most customer questions — status checks, ETA queries, and general process questions — are resolved
+through self-service tracking on ECU360 without needing to reach a support agent at all. A smaller set of
+situations genuinely require a human to get involved, and recognizing which category a question falls into
+is central to giving a customer an efficient path to resolution rather than looping them through self-service
+tools that were never going to answer their specific problem.
+Available Support Channels
+Beyond the chatbot and the ECU360 self-service platform, customers can typically reach Allcargo through
+a dedicated customer support phone line and email channel for account or shipment-specific queries, and,
+for customers with an active relationship at a specific CFS, ICD, or logistics park, through a direct point of
+contact at that facility for site-specific coordination such as scheduling a pickup slot or arranging an
+inspection visit. Each channel is best suited to a different kind of query: phone support is generally fastest
+for time-sensitive issues such as an imminent delivery problem, email is appropriate for documentation
+requests or non-urgent account matters, and facility-level contacts are most relevant when a customer's
+question concerns physical activity at a specific location rather than the shipment's overall status.
+Response time expectations differ meaningfully across these channels, and setting the right expectation
+up front avoids a customer feeling ignored simply because they chose a slower channel for an urgent
+matter. Phone support is generally the fastest path for anything time-sensitive, since it connects the
+customer to an agent in real time rather than queuing a written request. Email queries are typically handled
+within a standard business-day turnaround, which is appropriate for documentation requests or account
+questions but poorly suited to a same-day delivery problem. A customer whose question is genuinely
+urgent — for instance, a delivery attempt happening later the same day — should generally be directed to
+phone support rather than email, purely on the basis of how quickly each channel can realistically respond,
+independent of which channel the customer happened to use first.
+Situations Best Resolved Through Self-Service
+bullet Checking current shipment status or estimated arrival.
+bullet Confirming which service type or documents a booking requires.
+bullet General questions about a service line, such as whether Allcargo handles a specific cargo type or
+route.
+Situations That Should Be Escalated to a Human Agent
+bullet A shipment held at customs beyond the routine clearance window, particularly where a document
+correction or additional certificate is needed.
+bullet Cargo damage or loss reported by the recipient.
+bullet A COD shipment with repeated failed delivery attempts approaching the return-to-sender threshold.
+bullet Any dispute over a demurrage, detention, or storage charge the customer believes was applied
+incorrectly.
+Page 5 of 6 | Allcargo Logistics — Internal Reference
+bullet A request involving a change to shipment routing, consignee, or delivery instructions after the
+shipment has already departed.
+The distinguishing feature across the escalation list is that each situation requires a judgment call, an
+exception to standard process, or access to information and authority that self-service tracking does not
+provide. A support agent handling an escalated case should always have the shipment's full booking
+reference and current ECU360 status in hand before beginning, since re-confirming basic status is the
+most common avoidable delay in an otherwise straightforward escalation.
+It is worth handling the boundary between self-service and escalation deliberately rather than defaulting
+toward escalation whenever a customer sounds frustrated. A customer who is upset about a delay they
+can already see explained on ECU360 — for instance, a shipment held for a routine customs examination
+— is usually better served by a clear, specific explanation of what that status means and what happens
+next, rather than being routed to a support agent who will ultimately give the same explanation after a
+longer wait. Escalation should be reserved for cases where the platform genuinely cannot resolve the
+question on its own, not used as a default response to frustration when the underlying information is
+already available.
+6. Multi-Leg Shipments and Combined Visibility
+Many shipments, particularly international ones, involve more than one physical leg and, in some cases,
+more than one Allcargo entity handling different parts of the journey — for example, a domestic pickup leg
+handled through the express distribution network, an international ocean leg booked through ECU
+Worldwide as the NVOCC, and a final domestic delivery leg at the destination country handled by a local
+partner or agent. From the customer's point of view, this should still present as a single, continuous
+shipment under one booking reference, even though several distinct operational handoffs are happening
+behind that single view.
+Understanding this multi-leg structure matters for explaining certain kinds of status question accurately. A
+shipment that shows as having arrived at a port but not yet moved further is often simply between legs —
+waiting for the next carrier, mode, or handling party to take custody — rather than stalled due to a problem.
+Similarly, a status update that appears to originate from a different system or format than the customer is
+used to seeing may reflect a handoff to a different operational system at that leg boundary, particularly at
+an international-to-domestic transition, rather than an error in tracking. When a customer's question
+concerns a specific leg of a longer journey, it is worth clarifying which leg they mean before answering,
+since the same overall shipment can be simultaneously fully on schedule for one leg and genuinely
+delayed for another.
+7. Cargo Claims and Returns
+A claim arises when a customer reports cargo damage, shortage, or loss and seeks compensation under
+the shipment's insurance or liability terms. The claims process generally begins with the customer
+documenting the condition of the cargo at the point damage or shortage is discovered — ideally before the
+goods are moved further or repackaged, since the physical evidence at the point of discovery is central to
+assessing the claim. A claim is then filed with supporting documentation: the original packing list and
+commercial invoice to establish what was shipped, photographs or a discrepancy report describing the
+damage or shortage, and, where available, a note of any visible damage to the container or packaging
+itself.
+Page 6 of 6 | Allcargo Logistics — Internal Reference
+Claims are handled under the specific insurance and liability terms attached to that shipment, which can
+vary depending on whether the customer carried supplementary cargo insurance beyond the carrier's
+standard liability coverage. This is why a claims query is always escalated to a support agent rather than
+answered generically: the applicable compensation depends on the specific coverage in place for that
+shipment, not on a single fixed company-wide policy.
+Returns, distinct from damage claims, arise when a domestic express delivery cannot be completed —
+most commonly a cash-on-delivery shipment following repeated failed delivery attempts, as described in
+Section 4 — or when a recipient declines a delivery outright. A returned shipment is routed back to the
+original sender under the reverse leg of the same express network used for outbound delivery, and the
+sender should be notified of the return along with the reason recorded for the failed or declined delivery.
+Claims handling differs somewhat between international and domestic shipments, reflecting the different
+liability frameworks each operates under. An international shipment moved under a Bill of Lading is
+typically subject to the carrier liability limits set out in the applicable international carriage convention for
+that mode of transport, which caps compensation at a set amount per unit of weight unless the shipper has
+separately declared a higher value and paid an additional premium to cover it. A domestic express
+shipment is instead governed by Allcargo's own domestic terms of carriage, which may offer a different
+default liability structure. A customer with genuinely high-value cargo should be advised, at the time of
+booking rather than after a loss has already occurred, to consider a declared value arrangement or
+supplementary insurance appropriate to the mode of transport being used, since the default liability limit
+attached to a shipment is rarely sufficient to cover the full replacement cost of high-value goods.
+Across every topic in this reference, the same underlying principle applies: a customer's question is best
+answered by first establishing exactly where their shipment currently stands — which leg of the journey it is
+on, what its current ECU360 status shows, and whether the situation is a routine part of the process or a
+genuine exception. The large majority of support contacts are resolved simply by surfacing information that
+already exists in the shipment record, and the smaller set of situations that require escalation are
+distinguished specifically by needing a judgment call or an exception to standard process that self-service
+tracking cannot provide on its own.
+This guide is a summary reference for customer support and tracking practice. Specific booking
+requirements, service availability, and support contact channels should be confirmed against current
+Allcargo and ECU360 platform documentation before being presented to a customer as definitive.

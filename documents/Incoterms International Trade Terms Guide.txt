@@ -1,0 +1,383 @@
+Incoterms & International Trade Terms Guide
+Page 1
+Incoterms & International Trade Terms Guide
+Who is responsible for what, and at which stage, under each internationally recognized trade term.
+1. What Incoterms Are and Why They Matter
+Incoterms are a set of eleven standardized three-letter trade terms, published and periodically updated by the
+International Chamber of Commerce, that define how the costs, risks, and responsibilities of an international
+shipment are divided between a seller and a buyer. Each term answers three practical questions for a given
+transaction: who arranges and pays for transport at each stage of the journey, at what physical point does risk of loss
+or damage pass from seller to buyer, and who is responsible for export and import customs clearance. Because a
+sale contract can specify any one of the eleven terms, and because the terms differ substantially in how much of the
+journey the seller is responsible for, the Incoterm named in a contract has a direct effect on pricing, insurance
+arrangements, and where disputes are likely to arise if something goes wrong in transit.
+It is worth being precise about what Incoterms do not cover, since this is a common source of confusion. Incoterms
+govern the delivery of goods between seller and buyer, not the transfer of ownership (title) of the goods, and not the
+terms of payment. A contract can specify, for example, that risk transfers to the buyer once goods are loaded on
+board a vessel, while ownership of the goods only transfers once payment is received under a letter of credit — the
+two are governed by separate contractual mechanisms and should not be assumed to move together simply because
+a particular Incoterm has been agreed.
+2. Incoterms at a Glance
+The table below summarizes all eleven Incoterms 2020 rules, grouped by the transport modes they apply to, along
+with the point at which risk transfers from seller to buyer and who is responsible for arranging main carriage. Later
+sections explain each group in more depth.
+Table 1 — Incoterms 2020 Rules at a Glance
+Term
+Full Name
+Applies To
+Risk Transfers To Buyer When…
+EXW
+Ex Works
+Any mode
+Goods are made available at the seller's
+premises
+FCA
+Free Carrier
+Any mode
+Goods are handed to the carrier nominated by
+the buyer
+CPT
+Carriage Paid To
+Any mode
+Goods are handed to the first carrier (seller
+pays freight to destination)
+CIP
+Carriage and Insurance Paid
+To
+Any mode
+Goods are handed to the first carrier (seller
+pays freight and insurance)
+DAP
+Delivered at Place
+Any mode
+Goods arrive ready for unloading at the named
+destination
+DPU
+Delivered at Place Unloaded
+Any mode
+Goods are unloaded at the named destination
+DDP
+Delivered Duty Paid
+Any mode
+Goods arrive at destination, import-cleared
+and duty-paid
+FAS
+Free Alongside Ship
+Sea / inland
+waterway
+Goods are placed alongside the vessel at the
+port of loading
+Incoterms & International Trade Terms Guide
+Page 2
+FOB
+Free on Board
+Sea / inland
+waterway
+Goods are loaded on board the vessel
+CFR
+Cost and Freight
+Sea / inland
+waterway
+Goods are loaded on board (seller pays freight
+to destination)
+CIF
+Cost, Insurance and Freight
+Sea / inland
+waterway
+Goods are loaded on board (seller pays freight
+and insurance)
+3. Rules for Any Mode of Transport
+Ex Works (EXW)
+Ex Works places the minimum possible obligation on the seller of any Incoterm. The seller's only duty is to make the
+goods available at their own premises — a factory, warehouse, or similar location — packaged and ready for
+collection; the seller is not even responsible for loading the goods onto the buyer's collecting vehicle unless the
+contract specifically says otherwise. From that point forward, the buyer arranges and pays for every subsequent
+stage: inland transport to the port or airport, export clearance in the seller's country, main carriage, import clearance,
+and final delivery. Because the buyer is handling export formalities in a country that is not their own, EXW is generally
+more practical for domestic or regional transactions, or for buyers who already have an established freight forwarder
+and customs presence in the seller's country, than for a first-time buyer unfamiliar with the seller's local export
+requirements.
+Free Carrier (FCA)
+Under Free Carrier, the seller delivers the goods, cleared for export, to a carrier or other party nominated by the buyer
+at a named place. That named place matters: if it is the seller's own premises, the seller is responsible for loading the
+goods onto the collecting vehicle; if it is any other location, such as a carrier's terminal, the seller is only responsible
+for making the goods available for unloading, and the party at that location handles the unloading itself. FCA is widely
+regarded as the most workable general-purpose term for containerized shipments where the buyer wants control over
+main carriage but the seller is better positioned to handle export clearance in their own country — a common
+arrangement in practice.
+Carriage Paid To (CPT) and Carriage and Insurance Paid To (CIP)
+CPT and CIP are a matched pair: both require the seller to contract and pay for carriage to a named destination, but
+risk actually transfers to the buyer much earlier, at the point the goods are handed to the first carrier in the transport
+chain. This split — seller pays the freight bill, but buyer bears the risk for the entire main carriage — is one of the
+most misunderstood features of these two terms, and contracts should be explicit about the named place of delivery
+(where risk transfers) versus the named place of destination (where the seller's paid transport ends) to avoid
+disputes. CIP additionally requires the seller to obtain cargo insurance, and the Incoterms 2020 revision raised the
+required CIP insurance coverage to a higher level than under earlier versions of the rules, reflecting its intended use
+for higher-value or more sensitive cargo; CPT carries no such insurance obligation on the seller at all.
+Delivered at Place (DAP), Delivered at Place Unloaded (DPU), and Delivered Duty Paid (DDP)
+These three terms sit at the opposite end of the spectrum from Ex Works: the seller bears responsibility for nearly the
+entire journey. Under DAP, the seller delivers when the goods arrive at the named destination, ready for unloading,
+with the buyer handling unloading and import clearance. DPU goes one step further and requires the seller to unload
+the goods at the destination as well — the only Incoterm that places an unloading obligation on the seller — while
+import clearance remains the buyer's responsibility. DDP places the maximum obligation on the seller of any
+Incoterm: the seller is responsible for the entire journey through to import clearance and duty payment in the buyer's
+Incoterms & International Trade Terms Guide
+Page 3
+own country, handing over goods that are fully cleared and ready for use. Sellers agreeing to DDP should have a
+genuine operational capability to clear goods through customs in the destination country, since unfamiliarity with a
+foreign country's import procedures, licensing requirements, or duty structure is a frequent source of delay and
+unplanned cost under this term specifically.
+4. Rules for Sea and Inland Waterway Transport
+The remaining four terms apply only to shipment by sea or inland waterway, and all four use the ship's rail or, more
+precisely under current rules, the point of loading on board the vessel, as the reference point for risk transfer. They
+are not appropriate for containerized cargo delivered to a carrier's inland container yard before it reaches the vessel,
+since the seller in that situation loses practical control over the goods well before the risk-transfer point the term
+describes — FCA, CPT, or CIP are the more appropriate choice for such shipments.
+Free Alongside Ship (FAS)
+Under FAS, the seller delivers when the goods are placed alongside the vessel nominated by the buyer at the named
+port of loading — on the quay or in a barge, for example — with risk transferring to the buyer at that point, before the
+goods are actually loaded on board. FAS is most commonly seen in the bulk commodity trade, such as grain or ore
+shipped in non-containerized form, where cargo is genuinely placed alongside a vessel for loading by port equipment
+rather than delivered in a container.
+Free on Board (FOB)
+Free on Board is one of the most widely used and, in casual usage, most widely misapplied Incoterms in international
+trade. Properly, FOB applies to sea or inland waterway shipment only, and delivery occurs — with risk transferring to
+the buyer — once the goods are loaded on board the vessel at the named port of shipment. The seller bears the cost
+and risk of getting the goods on board; the buyer bears cost and risk from that point forward, including main carriage,
+unless the parties separately agree the seller will also pay freight (which does not change where risk transfers). A
+persistent point of confusion is that many businesses use 'FOB' loosely to describe any shipment where the seller
+pays to get goods to a port, including containerized cargo delivered to a container terminal well before vessel loading
+— which is properly an FCA arrangement. Using FOB terminology for a containerized shipment can leave real
+ambiguity over exactly when risk transferred if a container is damaged or lost between the terminal gate and the
+vessel.
+Cost and Freight (CFR) and Cost, Insurance and Freight (CIF)
+CFR and CIF mirror the CPT/CIP pairing but for sea and inland waterway transport specifically. Under both, the seller
+pays the cost of carriage to the named port of destination, but risk transfers to the buyer at the same point as under
+FOB — once the goods are loaded on board the vessel at the port of shipment — not when the vessel arrives. CIF
+additionally obliges the seller to obtain cargo insurance for the buyer's benefit, though at a minimum coverage level
+rather than the higher level required under CIP; buyers who want broader insurance coverage than the Incoterm
+minimum need to arrange supplementary cover themselves or negotiate an explicit upgrade in the sale contract. CIF
+remains extremely common in the commodity and bulk shipping trade, where it has a long history and
+well-established documentary practice, particularly in letter-of-credit transactions.
+5. Cost and Risk Responsibility by Stage
+The table below breaks the shipment journey into its component stages and shows, for a representative cross-section
+of terms, whether the seller (S) or the buyer (B) is responsible for each. This is a simplified summary; the full
+Incoterms 2020 text should be consulted for a specific transaction, particularly where a stage is split between the
+parties.
+Incoterms & International Trade Terms Guide
+Page 4
+Table 2 — Responsibility by Shipment Stage (Selected Terms)
+Stage
+EXW
+FCA
+FOB
+CIF
+DAP
+DDP
+Export packaging
+S
+S
+S
+S
+S
+S
+Loading at seller's
+premises
+B
+S*
+S
+S
+S
+S
+Export customs clearance
+B
+S
+S
+S
+S
+S
+Main carriage
+B
+B
+B
+S (pays)
+S
+S
+Cargo insurance
+B
+B
+B
+S (min.)
+S (opt.)
+S (opt.)
+Import customs clearance
+B
+B
+B
+B
+B
+S
+Import duty & taxes
+B
+B
+B
+B
+B
+S
+Final delivery / unloading
+B
+B
+B
+B
+B*
+S
+* Under FCA, loading responsibility depends on the named place: the seller loads if delivery occurs at the seller's own
+premises. Under DAP, the buyer is responsible for unloading unless the parties have separately agreed otherwise;
+DPU is the only term under which the seller unloads at destination.
+6. Worked Examples
+The following three scenarios walk through how the same shipment — a container of machine parts from a
+manufacturer in Ahmedabad, India, to a buyer in Rotterdam, Netherlands — plays out differently depending on which
+Incoterm the sale contract names. The underlying goods, quantity, and route are identical in each case; only the point
+at which cost and risk shift from seller to buyer changes.
+Example A — EXW Ahmedabad
+The seller packs the goods and makes them available at the factory gate in Ahmedabad. The buyer arranges its own
+trucking to the inland container depot, its own export documentation and customs clearance in India, ocean freight to
+Rotterdam, import clearance in the Netherlands, and final delivery. If the truck collecting the goods is involved in an
+accident five minutes after leaving the factory, the loss falls entirely on the buyer, because risk transferred the
+moment the goods were made available at the seller's premises. In practice, few overseas buyers have the local
+relationships in India needed to self-manage export clearance efficiently, so EXW shipments to distant buyers often
+end up requiring the seller's informal assistance anyway, even though the contract does not obligate it — a common
+source of friction when that assistance is assumed but never confirmed in writing.
+Example B — FCA Ahmedabad Container Freight Station
+The seller now handles trucking to the buyer's nominated container freight station, export customs clearance in India,
+and loading the container onto the buyer's nominated carrier. Risk transfers once the container is handed over at that
+station, not at the factory gate. From there, the buyer's freight forwarder takes over: booking the vessel, ocean freight,
+import clearance in the Netherlands, and final delivery. This is the arrangement most experienced freight forwarders
+recommend for containerized cargo precisely because it keeps export formalities — which require local knowledge —
+with the party that has that local knowledge, while giving the buyer full control over the international carriage leg and
+the associated cost negotiation.
+Example C — DDP Rotterdam
+The seller now owns the entire journey: trucking, Indian export clearance, ocean freight, Dutch import clearance, duty
+and VAT payment, and final delivery to the buyer's warehouse door. The buyer's only role is to receive and unload
+Incoterms & International Trade Terms Guide
+Page 5
+the goods. This arrangement is attractive to buyers who want a single landed price and no customs exposure, but it
+requires the seller to either have an EU-registered entity or fiscal representative capable of handling Dutch import
+VAT, or to work with a customs broker who can do so on its behalf — sellers without either in place frequently
+underquote the true cost of DDP by overlooking VAT and brokerage fees, and then absorb the shortfall themselves
+once the shipment is already in transit.
+Table 3 — Same Shipment, Three Outcomes
+Activity
+EXW
+FCA
+DDP
+Inland trucking (India)
+Buyer arranges
+Seller arranges
+Seller arranges
+Indian export
+clearance
+Buyer arranges
+Seller arranges
+Seller arranges
+Ocean freight booking
+Buyer arranges
+Buyer arranges
+Seller arranges
+Point risk transfers
+Factory gate,
+Ahmedabad
+Container freight station,
+Ahmedabad
+Buyer's door, Rotterdam
+Dutch import
+clearance
+Buyer arranges
+Buyer arranges
+Seller arranges
+Dutch duty & VAT
+Buyer pays
+Buyer pays
+Seller pays
+Seller's practical
+burden
+Lowest
+Moderate
+Highest
+7. Choosing the Right Incoterm
+There is no single 'correct' Incoterm for a given trade lane; the right choice depends on which party is better
+positioned to manage each stage of the journey, how much control each party wants over cost, and how comfortable
+each party is with the customs and regulatory environment on the other end of the shipment. The questions below are
+a useful starting checklist before naming a term in a sale contract.
+•
+Is the cargo containerized, or break-bulk / bulk cargo loaded directly onto a vessel? Containerized cargo
+generally calls for FCA, CPT, or CIP; break-bulk or bulk cargo is where FAS, FOB, CFR, and CIF remain
+genuinely appropriate.
+•
+Does the buyer have an established customs broker and freight forwarding relationship in the seller's country? If
+not, EXW places a burden on the buyer it may not be equipped to carry, and FCA is usually the safer starting
+point.
+•
+Does the seller have a genuine ability to clear goods through customs, and pay duty, in the buyer's country? If
+not, DDP should be avoided regardless of how attractive it looks to the buyer commercially, since an unfulfillable
+DDP promise causes far more damage to the relationship than a more modest term negotiated honestly.
+•
+Who is better placed to negotiate freight rates and insurance — the seller, who may ship this lane regularly and
+have volume-based rates, or the buyer, who may consolidate cargo from several suppliers onto the same
+vessel? Whichever party has the stronger negotiating position on freight is usually the party who should be
+contracting for it, which points toward CPT, CIP, CFR, or CIF when it is the seller, and toward FCA or FOB when
+it is the buyer.
+•
+How is the transaction being financed? Letter-of-credit financing has a long-established documentary practice
+built around FOB and CIF in particular, and switching to a less familiar term can create friction with the bank's
+documentation requirements even when the underlying logistics arrangement is sound.
+Incoterms & International Trade Terms Guide
+Page 6
+8. Incoterms 2020 — Key Changes from the 2010 Edition
+The Incoterms rules are revised by the International Chamber of Commerce roughly once a decade to reflect
+changes in trading practice; the current edition, Incoterms 2020, took effect on 1 January 2020 and replaced
+Incoterms 2010. Four changes are worth knowing, particularly for anyone who learned the rules under the earlier
+edition and has not revisited them since.
+•
+DAT (Delivered at Terminal) was renamed DPU (Delivered at Place Unloaded) and generalized: delivery under
+the 2010 rule had to occur at a 'terminal,' while DPU permits any named place, provided the seller is able to
+unload the goods there.
+•
+CIP's minimum insurance requirement was raised from the lower coverage level shared with CIF to a higher level
+of coverage, reflecting that CIP is more often used for finished or higher-value goods than the bulk commodities
+typically shipped under CIF.
+•
+FCA now allows the parties to agree that the buyer's carrier will issue an on-board bill of lading to the seller after
+loading, which helps sellers using FCA satisfy letter-of-credit documentation requirements that traditionally
+assumed an FOB or CIF shipment.
+•
+The rules now explicitly address arrangements where a party carries the goods using its own means of transport
+rather than contracting a third-party carrier, a scenario that earlier editions did not directly contemplate.
+None of these changes altered the fundamental cost-and-risk allocation of the terms that carried over unchanged —
+EXW, FCA, FAS, FOB, CFR, CIF, CPT, and DAP function the same way under both editions. A contract that simply
+says 'Incoterms' without specifying a year defaults, in most jurisdictions, to whichever edition was current when the
+contract was signed, so referencing the year explicitly — 'FCA Ahmedabad, Incoterms 2020' — remains good
+practice even though it feels redundant in the near term.
+9. Common Mistakes When Using Incoterms
+•
+Using FOB, CFR, or CIF for containerized cargo. These four terms reference loading on board a vessel, which
+happens well after a container leaves the shipper's control at an inland terminal; FCA, CPT, or CIP describe
+container shipments far more accurately and avoid ambiguity over when risk actually transferred.
+•
+Omitting the named place or port. An Incoterm without a specific named place — 'FCA' alone, for example, rather
+than 'FCA Shenzhen Port Container Terminal' — leaves the exact delivery point undefined, which is precisely the
+detail that determines where risk and cost transfer.
+•
+Assuming an Incoterm governs payment terms or title transfer. Incoterms address delivery, risk, and cost
+allocation only; when payment is due and when ownership passes are separate matters that need to be
+addressed elsewhere in the sale contract.
+•
+Agreeing to DDP without the practical ability to clear goods through customs in the buyer's country. A seller with
+no established import process in the destination country can face significant delay and unplanned expense
+fulfilling a DDP obligation, even though the term looks straightforward on paper.
+•
+Treating CIF or CIP insurance minimums as sufficient for high-value or fragile cargo. Both terms only require a
+baseline level of coverage; buyers with higher-value shipments often need to negotiate broader coverage
+explicitly rather than assume the built-in minimum is adequate.
+Compiled from the Incoterms 2020 rules published by the International Chamber of Commerce. This guide is a summary for reference
+purposes; the full rules text should be consulted, and the named Incoterm confirmed in writing, for any specific transaction.
