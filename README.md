@@ -1,134 +1,190 @@
-# 🚚 NexusFreight AI Logistics Assistant
+# 🚚 NexusFreight AI
 
-An AI-powered enterprise logistics assistant that combines **PostgreSQL**, **Supabase**, **ChromaDB**, and **Large Language Models (LLMs)** to provide intelligent shipment tracking, logistics insights, and risk analysis through a modern Streamlit interface.
+## Enterprise Logistics Intelligence Platform
 
----
+NexusFreight AI is an enterprise-grade internal logistics assistant developed to help logistics teams retrieve shipment information, analyze delivery risks, access organizational knowledge, and answer operational questions through a conversational AI interface.
 
-# 📌 Features
+The system combines **Large Language Models (LLMs)**, **Hybrid Retrieval-Augmented Generation (Hybrid RAG)**, **PostgreSQL/Supabase**, and **ChromaDB** to provide intelligent responses using both structured logistics data and unstructured company documentation.
 
-- 🤖 AI-powered Logistics Chatbot
-- 📦 Shipment Tracking
-- 🚚 Warehouse & Vehicle Information
-- 📊 Interactive Risk Dashboard
-- 🔍 Hybrid Retrieval (SQL + Vector Search)
-- 📚 Document Question Answering
-- ⚡ FastAPI Backend
-- 🎨 Modern Streamlit UI
-- 📈 Shipment Risk Analytics
-- 🌍 Incoterms & Logistics Knowledge Base
-- 💾 Supabase Integration
-- 🧠 ChromaDB Vector Search
-- 🔄 Context-aware AI Conversations
+Unlike a traditional chatbot, NexusFreight AI understands logistics operations, shipment workflows, warehouse management, customs procedures, transportation routes, delivery history, and shipment risk analysis. It retrieves real company information before generating responses, reducing hallucinations while improving answer accuracy.
 
 ---
 
-# 🏗 Project Architecture
+# 📌 Project Overview
 
-```
-                User
-                  │
-                  ▼
-          Streamlit Frontend
-                  │
-                  ▼
-            FastAPI Backend
-                  │
-     ┌────────────┴────────────┐
-     │                         │
-     ▼                         ▼
- PostgreSQL / Supabase      ChromaDB
-     │                         │
-     └────────────┬────────────┘
-                  ▼
-            Prompt Builder
-                  ▼
-             LLM Provider
-        (Groq / Gemini / OpenRouter)
-                  ▼
-             AI Response
-```
+The NexusFreight AI platform was designed as an internal enterprise assistant for logistics organizations where employees frequently need access to shipment information, operational documents, warehouse records, customer information, and shipment risk insights.
+
+Instead of manually searching multiple databases or documentation, employees can simply ask questions in natural language. The chatbot automatically determines whether the answer should come from:
+
+- Structured database records
+- Internal logistics documentation
+- Or a combination of both
+
+The platform also includes an interactive **Risk Dashboard** that visualizes shipment delays, delivery performance, transportation trends, and AI-generated shipment risk classifications.
 
 ---
 
-# 📂 Project Structure
+# 🎯 Business Problem
 
-```
-NexusFreight-AI
-│
-├── api/
-├── database/
-├── datasets/
-├── documents/
-├── embeddings/
-├── pages/
-├── providers/
-├── rag/
-│
-├── chatbot.py
-├── streamlit_app.py
-├── llm_manager.py
-├── query_router.py
-├── sql_engine.py
-├── prompt_builder.py
-├── memory.py
-├── shipment_details.py
-├── database_query.py
-├── hybrid_router.py
-├── system_prompt.py
-├── table_config.py
-├── requirements.txt
-└── README.md
-```
+Large logistics organizations store information in multiple systems:
+
+- Shipment databases
+- Warehouse records
+- Customer information
+- Delivery history
+- Operational manuals
+- Logistics policies
+- Customs documentation
+- Incoterms reference documents
+
+Finding information often requires employees to manually search across multiple applications, resulting in increased response time and operational inefficiency.
+
+NexusFreight AI addresses this challenge by providing a single conversational interface capable of retrieving information from both structured and unstructured enterprise knowledge sources.
 
 ---
 
-# 🛠 Technologies Used
+# 👥 Intended Users
 
-### Frontend
+The chatbot is designed for internal logistics personnel including:
 
-- Streamlit
-- Plotly
-
-### Backend
-
-- FastAPI
-- Uvicorn
-
-### Database
-
-- PostgreSQL
-- Supabase
-
-### AI
-
-- Groq API
-- Google Gemini
-- OpenRouter
-
-### Vector Database
-
-- ChromaDB
-- Sentence Transformers
-
-### Data Processing
-
-- Pandas
-- OpenPyXL
-- PyMuPDF
+- Logistics Coordinators
+- Warehouse Managers
+- Operations Managers
+- Customer Support Executives
+- Dispatch Teams
+- Supply Chain Analysts
+- Delivery Coordinators
+- Business Operations Teams
 
 ---
 
-# 📦 Installation
+# ✨ Key Features
 
-Clone the repository
+### 🤖 AI Conversational Assistant
+
+- Natural language interaction
+- Multi-turn conversation support
+- Context-aware responses
+- Conversation memory
+
+---
+
+### 📦 Shipment Information Retrieval
+
+Retrieve shipment details using Shipment ID or Booking ID, including:
+
+- Shipment Status
+- Shipment Type
+- Delivery Status
+- Shipping Mode
+- Priority
+- Delay Information
+- Risk Level
+- Recommended Actions
+
+---
+
+### 📚 Knowledge Base Search
+
+The chatbot searches enterprise documentation using semantic similarity through ChromaDB.
+
+Supported knowledge includes:
+
+- Incoterms
+- Customs Procedures
+- Logistics Policies
+- Warehouse Operations
+- Shipment Guidelines
+- Company Documentation
+- Operational Manuals
+
+---
+
+### 🗄 Structured Database Search
+
+Retrieve information directly from PostgreSQL/Supabase including:
+
+- Customers
+- Warehouses
+- Shipments
+- Routes
+- Vehicles
+- Products
+- Weather
+- Carriers
+- Delivery History
+- AI Monitoring Data
+
+---
+
+### 🔀 Hybrid Retrieval
+
+When a question requires both structured records and document knowledge, the chatbot automatically combines both retrieval methods before generating the final AI response.
+
+---
+
+### 📊 Risk Dashboard
+
+The Streamlit dashboard provides interactive analytics including:
+
+- Shipment Risk Distribution
+- Delivery Performance
+- Delay Analysis
+- Shipping Mode Statistics
+- Priority Analysis
+- Top Delayed Shipments
+- Shipment Search & Filtering
+- CSV Report Export
+
+---
+
+### ⚡ FastAPI Backend
+
+REST API endpoints support:
+
+- AI Chat
+- Shipment Retrieval
+- Risk Dashboard Analytics
+
+making the backend reusable for additional enterprise applications.
+
+---
+
+# ⚙️ Installation Guide
+
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/NexusFreight-AI.git
-
-cd NexusFreight-AI
+git clone https://github.com/<your-username>/nexusfreight-ai.git
+cd nexusfreight-ai
 ```
 
-Install dependencies
+---
+
+## 2. Create a Virtual Environment
+
+Windows
+
+```bash
+python -m venv .venv
+```
+
+Activate
+
+```bash
+.venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -136,31 +192,84 @@ pip install -r requirements.txt
 
 ---
 
-# ⚙ Configuration
+## 4. Configure Environment Variables
 
-Create a `config.py` file (or `.env`) containing your API credentials.
+Create a file named:
+
+```
+.env
+```
+
+using the template provided in:
+
+```
+.env.example
+```
 
 Example:
 
-```python
-GROQ_API_KEY = "YOUR_API_KEY"
-
-SUPABASE_URL = "YOUR_SUPABASE_URL"
-
-SUPABASE_KEY = "YOUR_SUPABASE_KEY"
+```env
+SUPABASE_URL=
+SUPABASE_KEY=
+GROQ_API_KEY=
+GOOGLE_API_KEY=
+OPENROUTER_API_KEY=
 ```
 
-**Do not commit your actual API keys to GitHub.**
+> Never commit the `.env` file or API keys to GitHub.
 
 ---
 
-# ▶ Running FastAPI
+## 5. Configure the Database
+
+The project uses **Supabase PostgreSQL** as the structured database.
+
+Ensure that:
+
+- Database is online
+- Required tables are available
+- Credentials are correctly configured inside `.env`
+
+---
+
+## 6. Verify ChromaDB
+
+The chatbot uses ChromaDB for semantic document retrieval.
+
+Verify that:
+
+- Documents have been processed
+- Embeddings are created
+- Chroma database exists
+
+Example structure:
+
+```
+chroma_db/
+```
+
+If required, regenerate the embeddings:
+
+```bash
+python rag/chunk_documents.py
+python rag/vector_store.py
+```
+
+---
+
+# ▶ Running the Application
+
+Open two separate terminals.
+
+---
+
+## Terminal 1 – Start FastAPI
 
 ```bash
 uvicorn api.main:app --reload
 ```
 
-Backend will start at
+Default URL
 
 ```
 http://127.0.0.1:8000
@@ -168,81 +277,116 @@ http://127.0.0.1:8000
 
 ---
 
-# ▶ Running Streamlit
+## Terminal 2 – Start Streamlit
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
----
+Default URL
 
-# 📊 Dashboard Features
-
-- Shipment Risk Distribution
-- Delay Analytics
-- Shipping Mode Analysis
-- Priority Analysis
-- Delivery Status
-- Search & Filtering
-- CSV Report Export
+```
+http://localhost:8501
+```
 
 ---
 
-# 💬 AI Assistant Capabilities
+# ✔ Startup Sequence
 
-The chatbot can answer questions about:
-
-- Shipments
-- Customers
-- Warehouses
-- Products
-- Routes
-- Vehicles
-- Carriers
-- Weather
-- Customs
-- Delivery History
-- Incoterms
-- Logistics Documentation
-- Risk Prediction
-- Shipment Delays
-
----
-
-# 📚 Knowledge Base
-
-The AI uses a hybrid knowledge base consisting of:
-
-- Structured PostgreSQL Data
-- Supabase Tables
-- Logistics PDF Documents
-- CSV Datasets
-- ChromaDB Vector Embeddings
-
----
-
-# 🚀 Future Enhancements
-
-- Voice Assistant
-- Real-time Shipment Tracking
-- Interactive Maps
-- Predictive ETA
-- Automated Email Alerts
-- Advanced Analytics
-- Multi-language Support
+```
+Clone Repository
+        │
+        ▼
+Create Virtual Environment
+        │
+        ▼
+Install Requirements
+        │
+        ▼
+Configure .env
+        │
+        ▼
+Connect Supabase
+        │
+        ▼
+Verify ChromaDB
+        │
+        ▼
+Start FastAPI
+        │
+        ▼
+Start Streamlit
+        │
+        ▼
+Open Chatbot
+        │
+        ▼
+Ask Questions
+```
 
 ---
 
-# 👨‍💻 Developed By
+# 📂 Project Structure
 
-**Samih Panwala**
-
-Computer Engineering Student
-
-AI & Data Science Enthusiast
+```
+nexusfreight_ai/
+│
+├── api/
+│   └── main.py
+│
+├── database/
+│   ├── risk_engine.py
+│   └── supabase_config.py
+│
+├── providers/
+│   ├── gemini_provider.py
+│   ├── groq_provider.py
+│   └── openrouter_provider.py
+│
+├── rag/
+│   ├── retriever.py
+│   ├── search.py
+│   ├── vector_store.py
+│   ├── vector_store_excel.py
+│   └── chunk_documents.py
+│
+├── datasets/
+│
+├── documents/
+│
+├── pages/
+│   └── 2_Risk_Dashboard.py
+│
+├── streamlit_app.py
+├── chatbot.py
+├── llm_manager.py
+├── hybrid_router.py
+├── database_router.py
+├── query_router.py
+├── sql_engine.py
+├── memory.py
+├── prompt_builder.py
+├── system_prompt.py
+├── table_config.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
-# 📄 License
+# 📌 Major Components
 
-This project is developed for educational and internship purposes.
+| Component | Responsibility |
+|-----------|----------------|
+| Streamlit | User Interface |
+| FastAPI | REST API Backend |
+| Query Router | Determines SQL / Vector / Hybrid route |
+| PostgreSQL | Structured logistics data |
+| ChromaDB | Semantic knowledge retrieval |
+| LLM Manager | Handles AI provider communication |
+| Memory | Multi-turn conversation context |
+| Risk Engine | Shipment risk prediction |
+| Dashboard | Risk analytics visualization |
+
+---

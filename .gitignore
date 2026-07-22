@@ -1,31 +1,28 @@
-# Python
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+config.py
+
+# Python Cache
 __pycache__/
 *.pyc
-
-# Virtual environments
-venv/
-.venv/
-
-# Secrets
-config.py
-.env
-
-# Chroma
-chroma_db/
-
-# Generated files
-rag/chunks.json
-
-# Zip files
-*.zip
-
-# Tests
-test*
-tests/
+*.pyo
 
 # VS Code
 .vscode/
 
-# OS
+# ChromaDB
+chroma_db/
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+
+# OS Files
 .DS_Store
 Thumbs.db
