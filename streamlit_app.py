@@ -44,7 +44,7 @@ font-family:'Inter',sans-serif;
 
 .stApp{
 
-background:#F6F8FC;
+background:#F5F7F2;
 
 }
 
@@ -76,11 +76,11 @@ padding-bottom:20px;
 
 section[data-testid="stSidebar"]{
 
-background:white;
+background:#FCFDFB;
 
 width:320px !important;
 
-border-right:1px solid #E5E7EB;
+border-right:1px solid #D8E2D1;
 
 }
 
@@ -88,7 +88,11 @@ border-right:1px solid #E5E7EB;
 
 .logo-card{
 
-background:linear-gradient(135deg,#2563EB,#4F46E5);
+background:linear-gradient(
+135deg,
+#6D8B74,
+#8AA58A
+);
 
 padding:28px;
 
@@ -96,7 +100,7 @@ border-radius:22px;
 
 margin-bottom:35px;
 
-box-shadow:0 12px 28px rgba(37,99,235,.20);
+box-shadow:0 12px 28px rgba(109,139,116,.28);
 
 }
 
@@ -126,13 +130,11 @@ line-height:1.6;
 
 .nav-title{
 
-font-size:20px;
-
+font-size:24px;
 font-weight:700;
-
-color:#6B7280;
-
-margin-bottom:15px;
+color:#5F7161;
+letter-spacing:.5px;
+margin-bottom:18px;
 
 }
 
@@ -142,37 +144,36 @@ margin-bottom:15px;
 
 width:100%;
 
-height:74px;
+height:80px;
 
 border-radius:18px;
 
-background:white;
+background:#F7FAF5;
 
-border:1px solid #E5E7EB;
+border:1px solid #D6E1D2;
 
-color:#111827;
-
-font-size:35px;
-
-font-weight:600;
-
-text-align:left;
-
-padding-left:18px;
+padding-left:24px;
 
 transition:.25s;
 
-box-shadow:0 4px 12px rgba(0,0,0,.03);
+box-shadow:0 5px 16px rgba(0,0,0,.04);
 
 }
 
-.stButton>button:hover{
 
-background:#EEF4FF;
+/* Navigation Button Text */
 
-border:1px solid #2563EB;
+.stButton>button p{
 
-transform:translateY(-2px);
+font-size:22px !important;
+
+font-weight:700 !important;
+
+color:#4B5D4B !important;
+
+text-align:left !important;
+
+margin:0;
 
 }
 
@@ -190,13 +191,13 @@ margin-bottom:28px;
 
 .status-card{
 
-background:white;
+background:#FBFCFA;
 
 padding:18px;
 
 border-radius:18px;
 
-border:1px solid #E5E7EB;
+border:1px solid #D7E2D1;
 
 margin-top:20px;
 
@@ -226,7 +227,7 @@ padding:7px 0;
 
 .hero{
 
-background:white;
+background:#FCFDFB;
 
 padding:42px;
 
@@ -236,7 +237,7 @@ box-shadow:0 12px 30px rgba(0,0,0,.05);
 
 margin-bottom:35px;
 
-border:1px solid #E5E7EB;
+border:1px solid #D6E2D2;
 
 }
 
@@ -246,7 +247,7 @@ font-size:46px;
 
 font-weight:700;
 
-color:#111827;
+color:#4D644F;
 
 margin-bottom:12px;
 
@@ -254,9 +255,9 @@ margin-bottom:12px;
 
 .hero p{
 
-font-size:18px;
+font-size:19px;
 
-color:#6B7280;
+color:#667566;
 
 line-height:1.8;
 
@@ -266,11 +267,11 @@ line-height:1.8;
 
 .stChatMessage{
 
-background:white;
+background:#FCFDFB;
 
 border-radius:22px;
 
-padding:18px;
+padding:24px 26px;
 
 margin-bottom:16px;
 
@@ -292,7 +293,7 @@ background:white;
 
 [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]){
 
-background:#EDF4FF;
+background:#EAF4E5;
 
 }
 
@@ -303,34 +304,62 @@ background:#EDF4FF;
 display:flex;
 
 justify-content:space-between;
+align-items:center;
 
-margin-top:14px;
+margin-top:18px;
+margin-bottom:6px;
 
-background:#F8FAFC;
+padding:10px 16px;
 
-padding:10px 14px;
+width:95%;
+margin-left:auto;
+margin-right:auto;
 
-border-radius:12px;
+background:#F4F8F2;
+
+border:1px solid #D8E2D1;
+
+border-radius:14px;
 
 font-size:13px;
 
-color:#6B7280;
+color:#667566;
 
-border:1px solid #E5E7EB;
+min-height:55px;
 
 }
+
+.source-card div{
+
+line-height:1.3;
+
+}
+
+.source-card b{
+
+font-size:12px;
+
+color:#7B8B7A;
+
+font-weight:600;
+
+}
+
+
 
 /* -------------------- Chat Input -------------------- */
-
-.stChatInput{
-
-margin-top:15px;
-
-}
 
 .stChatInput textarea{
 
 border-radius:18px !important;
+
+font-size:18px;
+
+padding:14px;
+
+background:#FCFDFB;
+
+border:1px solid #D8E2D1;
 
 }
 
@@ -340,7 +369,7 @@ border-radius:18px !important;
 
 text-align:center;
 
-color:#9CA3AF;
+color:#708670;
 
 font-size:13px;
 
@@ -348,6 +377,41 @@ margin-top:40px;
 
 }
 
+/* Popular Question Buttons */
+
+div[data-testid="column"] .stButton>button{
+
+height:70px;
+
+background:#F4F8F1;
+
+border-radius:18px;
+
+border:1px solid #D7E2D1;
+
+}
+
+div[data-testid="column"] .stButton>button p{
+
+font-size:18px !important;
+
+font-weight:600 !important;
+
+color:#516851 !important;
+
+}
+
+
+
+div[data-testid="stAlert"]{
+
+border-radius:20px;
+
+font-size:18px;
+
+padding:20px;
+
+}
 </style>
 """, unsafe_allow_html=True)
 

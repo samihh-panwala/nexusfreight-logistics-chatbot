@@ -26,14 +26,22 @@ st.markdown("""
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* ==========================================================
+GENERAL
+========================================================== */
+
 html,
 body,
 [class*="css"]{
+
 font-family:'Inter',sans-serif;
+
 }
 
 .stApp{
-background:#F6F8FC;
+
+background:#F5F7F2;
+
 }
 
 #MainMenu{visibility:hidden;}
@@ -45,23 +53,39 @@ display:none;
 }
 
 .block-container{
+
 padding-top:25px;
 padding-left:45px;
 padding-right:45px;
 padding-bottom:20px;
+
 }
+
+/* ==========================================================
+SIDEBAR
+========================================================== */
 
 section[data-testid="stSidebar"]{
-background:white;
+
+background:#FCFDFB;
+
 width:320px !important;
-border-right:1px solid #E5E7EB;
+
+border-right:1px solid #D8E2D1;
+
 }
 
-/* Logo */
+/* ==========================================================
+LOGO
+========================================================== */
 
 .logo-card{
 
-background:linear-gradient(135deg,#2563EB,#4F46E5);
+background:linear-gradient(
+135deg,
+#6D8B74,
+#8AA58A
+);
 
 padding:28px;
 
@@ -69,7 +93,7 @@ border-radius:22px;
 
 margin-bottom:35px;
 
-box-shadow:0 12px 28px rgba(37,99,235,.20);
+box-shadow:0 12px 28px rgba(109,139,116,.28);
 
 }
 
@@ -89,100 +113,133 @@ margin-bottom:8px;
 
 font-size:14px;
 
-color:rgba(255,255,255,.9);
+color:rgba(255,255,255,.92);
 
 line-height:1.6;
 
 }
 
-/* Navigation */
+/* ==========================================================
+NAVIGATION
+========================================================== */
 
 .nav-title{
 
-font-size:20px;
+font-size:24px;
 
 font-weight:700;
 
-color:#6B7280;
+color:#5F7161;
 
-margin-bottom:15px;
+letter-spacing:.4px;
+
+margin-bottom:18px;
 
 }
 
-/* Sidebar Buttons */
+/* ==========================================================
+BUTTONS
+========================================================== */
 
 .stButton>button{
 
 width:100%;
 
-height:74px;
+height:78px;
+
+background:#F7FAF5;
+
+border:1px solid #D6E1D2;
 
 border-radius:18px;
 
-background:white;
-
-border:1px solid #E5E7EB;
-
-color:#111827;
-
-font-size:20px;
-
-font-weight:600;
-
-text-align:left;
-
-padding-left:18px;
+padding-left:22px;
 
 transition:.25s;
 
-box-shadow:0 4px 12px rgba(0,0,0,.03);
+box-shadow:0 5px 16px rgba(0,0,0,.04);
 
 }
 
-.stButton>button{
+.stButton>button p{
 
-background:white;
-border:1px solid #E5E7EB;
-color:#111827;
-font-size:17px;
-font-weight:600;
-border-radius:18px;
-height:60px;
-box-shadow:0 4px 12px rgba(0,0,0,.03);
+font-size:20px !important;
+
+font-weight:700 !important;
+
+color:#4B5D4B !important;
+
+text-align:left;
+
+margin:0;
 
 }
 
 .stButton>button:hover{
 
-background:#EEF4FF;
+background:#E7F1E4;
 
-border:1px solid #2563EB;
+border-color:#6D8B74;
 
-transform:translateY(-2px);
+transform:translateY(-3px);
 
-}
-
-/* Divider */
-
-hr{
-
-margin-top:28px;
-
-margin-bottom:28px;
+box-shadow:0 10px 22px rgba(109,139,116,.18);
 
 }
 
-/* Status Card */
+/* Download Button */
+
+div[data-testid="stDownloadButton"]>button{
+
+width:100%;
+
+height:78px;
+
+background:#F7FAF5;
+
+border:1px solid #D6E1D2;
+
+border-radius:18px;
+
+transition:.25s;
+
+box-shadow:0 5px 16px rgba(0,0,0,.04);
+
+}
+
+div[data-testid="stDownloadButton"]>button p{
+
+font-size:20px !important;
+
+font-weight:700 !important;
+
+color:#4B5D4B !important;
+
+}
+
+div[data-testid="stDownloadButton"]>button:hover{
+
+background:#E7F1E4;
+
+border-color:#6D8B74;
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+STATUS CARD
+========================================================== */
 
 .status-card{
 
-background:white;
+background:#FBFCFA;
 
 padding:18px;
 
 border-radius:18px;
 
-border:1px solid #E5E7EB;
+border:1px solid #D7E2D1;
 
 margin-top:20px;
 
@@ -192,9 +249,11 @@ box-shadow:0 6px 18px rgba(0,0,0,.03);
 
 .status-title{
 
-font-size:15px;
+font-size:16px;
 
 font-weight:700;
+
+color:#4D644F;
 
 margin-bottom:12px;
 
@@ -202,27 +261,31 @@ margin-bottom:12px;
 
 .status-item{
 
-font-size:14px;
+font-size:15px;
 
 padding:7px 0;
 
+color:#667566;
+
 }
 
-/* Hero */
+/* ==========================================================
+HERO
+========================================================== */
 
 .hero{
 
-background:white;
+background:#FCFDFB;
 
 padding:42px;
 
 border-radius:28px;
 
+border:1px solid #D6E2D2;
+
 box-shadow:0 12px 30px rgba(0,0,0,.05);
 
 margin-bottom:35px;
-
-border:1px solid #E5E7EB;
 
 }
 
@@ -232,7 +295,7 @@ font-size:46px;
 
 font-weight:700;
 
-color:#111827;
+color:#4D644F;
 
 margin-bottom:12px;
 
@@ -240,23 +303,25 @@ margin-bottom:12px;
 
 .hero p{
 
-font-size:18px;
+font-size:19px;
 
-color:#6B7280;
+color:#667566;
 
 line-height:1.8;
 
 }
 
-/* Section Titles */
+/* ==========================================================
+SECTION TITLES
+========================================================== */
 
 .section-title{
 
-font-size:32px;
+font-size:30px;
 
 font-weight:700;
 
-color:#111827;
+color:#5F7161;
 
 margin-top:15px;
 
@@ -264,93 +329,569 @@ margin-bottom:25px;
 
 }
 
-/* Plotly Cards */
+
+/* ==========================================================
+PLOTLY CHART CARDS
+========================================================== */
 
 .element-container:has(.js-plotly-plot){
 
-background:white;
-
-padding:20px;
-
-border-radius:22px;
-
-border:1px solid #E5E7EB;
-
-box-shadow:0 8px 22px rgba(0,0,0,.05);
-
-margin-bottom:25px;
-
-}
-
-/* Metrics */
-
-[data-testid="metric-container"]{
-
-background:white;
-
-border:1px solid #E5E7EB;
-
-border-radius:20px;
+background:#FCFDFB;
 
 padding:22px;
 
-box-shadow:0 8px 22px rgba(0,0,0,.05);
+border-radius:22px;
+
+border:1px solid #D7E2D1;
+
+box-shadow:0 8px 22px rgba(109,139,116,.08);
+
+margin-bottom:28px;
 
 }
 
-/* DataFrames */
+/* ==========================================================
+METRIC CARDS
+========================================================== */
 
-[data-testid="stDataFrame"]{
+/* ======================================
+PREMIUM KPI CARDS
+====================================== */
 
-border-radius:20px;
+[data-testid="metric-container"]{
 
-border:1px solid #E5E7EB;
+background:linear-gradient(
+180deg,
+#FCFDFB,
+#F3F8F0
+);
 
-overflow:hidden;
+border:1px solid #D6E1D2;
+
+border-radius:22px;
+
+padding:25px;
+
+box-shadow:0 12px 28px rgba(109,139,116,.12);
+
+transition:.25s;
+
+min-height:140px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
 
 }
 
-/* Inputs */
+[data-testid="metric-container"]:hover{
 
-.stSelectbox>div>div{
+transform:translateY(-6px);
 
-border-radius:16px;
+border-color:#7D9B80;
+
+box-shadow:0 18px 38px rgba(109,139,116,.22);
+
+}
+
+[data-testid="metric-container"] label{
+
+font-size:20px !important;
+
+font-weight:700 !important;
+
+color:#4D644F !important;
+
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"]{
+
+font-size:44px !important;
+
+font-weight:800;
+
+color:#37543B;
+
+}
+
+/* Space between KPI cards */
+
+div[data-testid="column"]{
+
+padding:6px;
+
+}
+
+/* ==========================================================
+FILTER CARD
+========================================================== */
+
+div[data-testid="stVerticalBlockBorderWrapper"]{
+
+background:#FCFDFB;
+
+border-radius:22px;
+
+border:1px solid #D7E2D1;
+
+padding:22px;
+
+box-shadow:0 8px 20px rgba(109,139,116,.08);
+
+}
+
+/* ==========================================================
+SELECT BOX
+========================================================== */
+
+div[data-baseweb="select"]{
+
+background:#F7FAF5 !important;
+
+border-radius:16px !important;
+
+border:1px solid #D7E2D1 !important;
+
+min-height:48px;
+
+}
+
+div[data-baseweb="select"]:hover{
+
+border-color:#6D8B74 !important;
+
+}
+
+/* Dropdown Selected Text */
+
+div[data-baseweb="select"] span{
+
+font-size:17px !important;
+
+font-weight:600 !important;
+
+color:#4D644F !important;
+
+}
+
+/* Dropdown Menu Items */
+
+div[role="listbox"] div{
+
+font-size:17px !important;
+
+font-weight:500;
+
+}
+
+/* ==========================================================
+TEXT INPUT
+========================================================== */
+
+.stTextInput label{
+
+font-size:18px !important;
+
+font-weight:700 !important;
+
+color:#4D644F !important;
 
 }
 
 .stTextInput input{
 
+background:#FCFDFB;
+
+border:1px solid #D7E2D1;
+
 border-radius:16px;
+
+font-size:17px;
+
+padding:14px;
+
+color:#4D644F;
 
 }
 
-/* Footer */
+.stTextInput input:focus{
+
+border-color:#6D8B74;
+
+box-shadow:0 0 0 2px rgba(109,139,116,.12);
+
+}
+
+/* ==========================================================
+DATAFRAME
+========================================================== */
+
+[data-testid="stDataFrame"]{
+
+border-radius:20px;
+
+border:1px solid #D7E2D1;
+
+overflow:hidden;
+
+background:#FCFDFB;
+
+box-shadow:0 8px 20px rgba(109,139,116,.08);
+
+}
+
+/* ==========================================================
+TABLE CONTAINER
+========================================================== */
+
+div[data-testid="stVerticalBlockBorderWrapper"] table{
+
+font-size:14px;
+
+}
+
+thead tr{
+
+background:#EDF4E8 !important;
+
+}
+
+thead th{
+
+color:#4D644F !important;
+
+font-weight:700 !important;
+
+}
+
+tbody tr:nth-child(even){
+
+background:#FAFCF9;
+
+}
+
+/* ==========================================================
+SPINNER
+========================================================== */
+
+div[data-testid="stSpinner"]{
+
+background:#FCFDFB;
+
+border-radius:18px;
+
+padding:12px;
+
+}
+
+/* ==========================================================
+INFO / SUCCESS / WARNING / ERROR
+========================================================== */
+
+div[data-testid="stAlert"]{
+
+border-radius:18px;
+
+font-size:16px;
+
+padding:18px;
+
+border:1px solid #D7E2D1;
+
+}
+
+/* ==========================================================
+EXPANDER
+========================================================== */
+
+details{
+
+border-radius:18px;
+
+border:1px solid #D7E2D1;
+
+background:#FCFDFB;
+
+padding:10px;
+
+}
+
+/* ==========================================================
+PLOTLY TOOLBAR
+========================================================== */
+
+.modebar{
+
+background:transparent !important;
+
+}
+
+/* ==========================================================
+SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#EEF4EB;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#B6C7B0;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#90AA8B;
+
+}
+
+/* ==========================================================
+DOWNLOAD BUTTON (PREMIUM)
+========================================================== */
+
+div[data-testid="stDownloadButton"]{
+
+margin-top:10px;
+
+}
+
+div[data-testid="stDownloadButton"] > button{
+
+width:100%;
+
+height:78px;
+
+background:#F7FAF5;
+
+border:1px solid #D6E1D2;
+
+border-radius:18px;
+
+transition:.25s;
+
+box-shadow:0 5px 16px rgba(0,0,0,.04);
+
+}
+
+div[data-testid="stDownloadButton"] > button p{
+
+font-size:20px !important;
+
+font-weight:700 !important;
+
+color:#4B5D4B !important;
+
+}
+
+div[data-testid="stDownloadButton"] > button:hover{
+
+background:#E7F1E4;
+
+border-color:#6D8B74;
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 22px rgba(109,139,116,.18);
+
+}
+
+/* ==========================================================
+BUTTON ANIMATION
+========================================================== */
+
+.stButton>button,
+div[data-testid="stDownloadButton"]>button{
+
+transition:all .25s ease;
+
+}
+
+.stButton>button:active,
+div[data-testid="stDownloadButton"]>button:active{
+
+transform:scale(.98);
+
+}
+
+/* ==========================================================
+CHART TITLES
+========================================================== */
+
+.js-plotly-plot .gtitle{
+
+font-family:'Inter',sans-serif !important;
+
+font-size:18px !important;
+
+font-weight:700 !important;
+
+fill:#4D644F !important;
+
+}
+
+/* ==========================================================
+PLOTLY LEGENDS
+========================================================== */
+
+.js-plotly-plot text{
+
+font-family:'Inter',sans-serif !important;
+
+}
+
+/* ==========================================================
+CONTAINERS
+========================================================== */
+
+div[data-testid="stHorizontalBlock"]{
+
+gap:1.2rem;
+
+}
+
+/* ==============================
+FILTER LABELS
+============================== */
+
+label{
+
+font-size:18px !important;
+
+font-weight:700 !important;
+
+color:#4D644F !important;
+
+letter-spacing:0.3px;
+
+}
+
+/* ==========================================================
+MARKDOWN HEADINGS
+========================================================== */
+
+h1{
+
+color:#4D644F;
+
+}
+
+h2{
+
+color:#5F7161;
+
+}
+
+h3{
+
+color:#667566;
+
+}
+
+/* ==========================================================
+LINKS
+========================================================== */
+
+a{
+
+color:#6D8B74;
+
+text-decoration:none;
+
+}
+
+a:hover{
+
+color:#4D644F;
+
+}
+
+/* ==========================================================
+FOOTER
+========================================================== */
 
 .footer{
 
 text-align:center;
 
-color:#9CA3AF;
+color:#708670;
 
-font-size:13px;
+font-size:14px;
 
-margin-top:40px;
+margin-top:45px;
+
+line-height:1.8;
 
 }
 
-st.download_button(
-    label="⬇ Download Report",
-    background:white;
-    border:1px solid #E5E7EB;
-    color:#111827;
-    font-size:17px;
-    font-weight:600;
-    border-radius:18px;
-    height:60px;
-    box-shadow:0 4px 12px rgba(0,0,0,.03);
-)
+.footer b{
+
+color:#4D644F;
+
+}
+
+/* ==========================================================
+SMOOTH FADE
+========================================================== */
+
+.stApp{
+
+animation:fadeIn .35s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(6px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================================
+REMOVE EXTRA STREAMLIT PADDING
+========================================================== */
+
+div[data-testid="stVerticalBlock"]{
+
+gap:1rem;
+
+}
+
+/* ==========================================================
+END
+========================================================== */
 
 </style>
+
 """, unsafe_allow_html=True)
 
 # ==========================================================
