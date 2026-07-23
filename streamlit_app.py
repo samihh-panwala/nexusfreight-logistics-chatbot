@@ -524,7 +524,7 @@ combining PostgreSQL + ChromaDB + LLM.
         st.info("""
 ### 🚚 Try asking
 
-• Show shipment **SHP0001**
+• Show shipment **5fd50c5c-973f-43bc-a629-06e4b5cd541b**
 
 • List all customers
 

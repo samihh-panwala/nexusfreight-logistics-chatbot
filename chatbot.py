@@ -7,6 +7,12 @@ from rag.search import search_documents
 
 from memory import ConversationMemory
 from prompt_builder import build_messages
+from utils.greetings import (
+    is_greeting,
+    greeting_response,
+    is_general_query,
+    assistant_response
+)
 
 import json
 import re
@@ -495,6 +501,28 @@ def chat(user_query):
             "query_type": "NONE",
             "source": "NONE"
         }
+        
+    # -----------------------------
+    # Greetings
+    # -----------------------------
+
+    if is_greeting(user_query):
+        return {
+            "answer": greeting_response(),
+            "query_type": "GREETING",
+            "source": "GENERAL"
+        }
+
+    # -----------------------------
+    # General chatbot questions
+    # -----------------------------
+
+    if is_general_query(user_query):
+        return {
+            "answer": assistant_response(),
+            "query_type": "GENERAL",
+            "source": "GENERAL"
+        }
 
     try:
         query_type = route_query(
@@ -603,6 +631,15 @@ def chat(user_query):
         source = "ChromaDB"
 
         docs = search_documents(user_query)
+        if not docs:
+            return {
+                "answer": (
+                    "I couldn't find any relevant information in the knowledge base. "
+                    "Please try asking a logistics-related question or rephrase your query."
+                ),
+                "query_type": query_type,
+                "source": source
+            }
 
         MAX_CONTEXT = 1000
 

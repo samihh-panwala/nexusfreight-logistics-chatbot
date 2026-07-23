@@ -324,10 +324,10 @@ def search_documents(query, top_k=6):
         if len(filtered) >= 4:
             break
 
-        if doc["distance"] <= 1.8:
+        # Good semantic match
+        if doc["distance"] <= 1.0:
             filtered.append(doc)
 
-    if not filtered:
-        filtered = documents[:4]
-
-    return filtered 
+        # Slightly weaker semantic match but with keyword overlap
+        elif doc["distance"] <= 1.8 and doc["keyword_score"] > 0:
+            filtered.append(doc)
