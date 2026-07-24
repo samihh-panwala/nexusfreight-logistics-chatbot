@@ -1,10 +1,14 @@
 from supabase import create_client
-from config import SUPABASE_URL, SUPABASE_KEY
+import os
+from dotenv import load_dotenv
 
 # -----------------------------
 # Connect to Supabase
 # -----------------------------
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 
 # =====================================================

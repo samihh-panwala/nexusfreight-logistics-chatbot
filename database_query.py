@@ -1,9 +1,21 @@
-from config import SUPABASE_URL, SUPABASE_KEY
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+print("URL =", os.getenv("SUPABASE_URL"))
+print("KEY =", os.getenv("SUPABASE_KEY"))
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 from supabase import create_client
 from database.risk_engine import shipment_risk
 from datetime import datetime
 
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+supabase = create_client(
+    SUPABASE_URL,
+    SUPABASE_KEY
+)
 
 
 # =====================================================

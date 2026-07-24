@@ -1,13 +1,21 @@
 from openai import OpenAI
-from config import OPENROUTER_API_KEY
+import os
+from dotenv import load_dotenv
 
-client = OpenAI(
-    api_key=OPENROUTER_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
-)
+load_dotenv()
 
 
 def generate_response(messages):
+
+    api_key = os.getenv("OPENROUTER_API_KEY")
+
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY is not configured.")
+
+    client = OpenAI(
+        api_key=api_key,
+        base_url="https://openrouter.ai/api/v1"
+    )
 
     response = client.chat.completions.create(
         model="openrouter/free",
