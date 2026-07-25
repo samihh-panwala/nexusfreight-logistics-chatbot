@@ -14,9 +14,28 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 
 client = chromadb.PersistentClient(path="chroma_db")
 
-collection = client.get_or_create_collection(
-    name="logistics_documents"
-)
+try:
+
+    collection = client.get_collection(
+        name="logistics_documents"
+    )
+
+    print("✅ ChromaDB Collection Loaded")
+
+except Exception:
+
+    print("⚠️ ChromaDB Collection not found.")
+    print("⚠️ Creating Knowledge Base...")
+
+    from rag.vector_store import build_vector_database
+
+    build_vector_database()
+
+    collection = client.get_collection(
+        name="logistics_documents"
+    )
+
+    print("✅ Knowledge Base Created Successfully")
 
 # -------------------------------------------------
 # Document Routing Keywords
