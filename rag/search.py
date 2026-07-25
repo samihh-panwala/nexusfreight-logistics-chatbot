@@ -1,352 +1,63 @@
-import chromadb
-import re
+import os
+from dotenv import load_dotenv
+from supabase import create_client
 from sentence_transformers import SentenceTransformer
 
-# -------------------------------------------------
-# Embedding Model
-# -------------------------------------------------
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+supabase = create_client(
+    SUPABASE_URL,
+    SUPABASE_KEY
+)
+
+print("✅ Supabase Connected")
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# -------------------------------------------------
-# ChromaDB
-# -------------------------------------------------
+print("✅ Embedding Model Loaded")
 
-client = chromadb.PersistentClient(path="chroma_db")
 
-try:
+def search_documents(query, top_k=5):
 
-    collection = client.get_collection(
-        name="logistics_documents"
-    )
+    embedding = model.encode(query).tolist()
 
-    print("✅ ChromaDB Collection Loaded")
-
-except Exception:
-
-    print("⚠️ ChromaDB Collection not found.")
-    print("⚠️ Creating Knowledge Base...")
-
-    from rag.vector_store import build_vector_database
-
-    build_vector_database()
-
-    collection = client.get_collection(
-        name="logistics_documents"
-    )
-
-    print("✅ Knowledge Base Created Successfully")
-
-# -------------------------------------------------
-# Document Routing Keywords
-# -------------------------------------------------
-
-DOCUMENT_FILTERS = {
-
-    "incoterm": [
-        "incoterm",
-        "incoterms"
-    ],
-
-    "customs": [
-        "custom",
-        "customs",
-        "clearance",
-        "import",
-        "export"
-    ],
-
-    "warehouse": [
-        "warehouse",
-        "warehouses",
-        "storage",
-        "inventory"
-    ],
-
-    "shipment": [
-        "shipment",
-        "shipments",
-        "tracking",
-        "delivery",
-        "booking"
-    ],
-
-    "carrier": [
-        "carrier",
-        "carriers",
-        "transport",
-        "shipping company"
-    ],
-
-    "customer": [
-        "customer",
-        "customers",
-        "client"
-    ],
-
-    "vehicle": [
-        "vehicle",
-        "vehicles",
-        "truck"
-    ],
-
-    "route": [
-        "route",
-        "routes",
-        "path"
-    ],
-
-    "weather": [
-        "weather",
-        "storm",
-        "rain",
-        "temperature"
-    ],
-
-    "ai": [
-        "ai",
-        "prediction",
-        "risk",
-        "delay",
-        "model",
-        "monitoring",
-        "feature"
-    ]
-}
-
-# -------------------------------------------------
-# Detect Best Matching Document
-# -------------------------------------------------
-
-def detect_document(query):
-
-    query = query.lower()
-
-    for document, keywords in DOCUMENT_FILTERS.items():
-
-        for keyword in keywords:
-
-            if keyword in query:
-
-                return document
-
-    return None
-
-
-# -------------------------------------------------
-# Map Document Key to Actual File Name
-# -------------------------------------------------
-
-DOCUMENT_FILES = {
-
-    "incoterm":
-        "Incoterms International Trade Terms Guide.txt",
-
-    "customs":
-        "Customs.txt",
-
-    "warehouse":
-        "Warehouses.txt",
-
-    "shipment":
-        "Shipments.txt",
-
-    "carrier":
-        "Carriers.txt",
-
-    "customer":
-        "Customers.txt",
-
-    "vehicle":
-        "Vehicles.txt",
-
-    "route":
-        "Routes.txt",
-
-    "weather":
-        "Weather.txt",
-
-    "ai":
-        "AI_Inference_Log.txt"
-}
-
-# -------------------------------------------------
-# Remember Last Document
-# -------------------------------------------------
-
-LAST_DOCUMENT = None
-
-# -------------------------------------------------
-# Keyword Score
-# -------------------------------------------------
-
-def keyword_score(query, text):
-
-    query_words = set(
-        re.findall(r"\w+", query.lower())
-    )
-
-    text_words = set(
-        re.findall(r"\w+", text.lower())
-    )
-
-    return len(query_words & text_words)
-
-
-def search_documents(query, top_k=6):
-
-    global LAST_DOCUMENT
-
-    document_key = detect_document(query)
-
-    query_lower = query.lower()
-
-    # -------------------------------------------------
-    # Only filter for definition-type questions
-    # -------------------------------------------------
-
-    definition_words = [
-        "what is",
-        "define",
-        "definition",
-        "meaning",
-        "explain"
-    ]
-
-    use_filter = False
-
-    if document_key:
-
-        LAST_DOCUMENT = document_key
-
-        if any(word in query_lower for word in definition_words):
-
-            use_filter = True
-
-    elif LAST_DOCUMENT and any(word in query_lower for word in definition_words):
-
-        document_key = LAST_DOCUMENT
-        use_filter = True
-
-    where_filter = None
-
-    if use_filter:
-
-        filename = DOCUMENT_FILES.get(document_key)
-
-        if filename:
-
-            where_filter = {
-                "document_name": filename
-            }
-
-    # -------------------------------------------------
-    # Query ChromaDB
-    # -------------------------------------------------
-
-    try:
-
-        if where_filter:
-
-            results = collection.query(
-                query_texts=[query],
-                where=where_filter,
-                n_results=top_k,
-                include=[
-                    "documents",
-                    "metadatas",
-                    "distances"
-                ]
-            )
-
-        else:
-
-            results = collection.query(
-                query_texts=[query],
-                n_results=top_k,
-                include=[
-                    "documents",
-                    "metadatas",
-                    "distances"
-                ]
-            )
-
-    except Exception as e:
-
-        print("Search Error:", e)
-
-        return []
-
-    if not results["documents"]:
-
-        return []
+    response = supabase.rpc(
+        "match_documents",
+        {
+            "query_embedding": embedding,
+            "match_count": top_k
+        }
+    ).execute()
 
     documents = []
 
-    print("\n========== CHROMADB RESULTS ==========")
-
-    for i in range(len(results["documents"][0])):
-
-        metadata = results["metadatas"][0][i]
-
-        distance = results["distances"][0][i]
-
-        print(
-            metadata.get("document_name", "Unknown"),
-            "Distance:",
-            round(distance, 4)
-        )
-
-        text = results["documents"][0][i]
+    for row in response.data:
 
         documents.append({
 
-            "chunk_id": results["ids"][0][i],
+            "chunk_id": row["chunk_id"],
 
-            "document": text,
+            "document": row["content"],
 
-            "metadata": metadata,
+            "metadata": {
 
-            "source": metadata.get("document_name", "Unknown"),
+                "document_name": row["document_name"],
 
-            "distance": distance,
+                "document_type": row["document_type"],
 
-            "keyword_score": keyword_score(query, text)
+                "chunk_number": row["chunk_number"]
+
+            },
+
+            "source": row["document_name"],
+
+            "distance": 1 - row["similarity"],
+
+            "keyword_score": 1
 
         })
 
-    print("======================================\n")
-
-    # -------------------------------------------------
-    # Re-rank
-    # -------------------------------------------------
-
-    documents = sorted(
-
-        documents,
-
-        key=lambda x: (
-            -x["keyword_score"],
-            x["distance"]
-        )
-
-    )
-
-    # -------------------------------------------------
-    # Keep only reasonably relevant chunks
-    # -------------------------------------------------
-
-    filtered = []
-
-    for doc in documents:
-
-        if len(filtered) >= 4:
-            break
-
-        # Good semantic match
-        if doc["distance"] <= 1.0:
-            filtered.append(doc)
-
-        # Slightly weaker semantic match but with keyword overlap
-        elif doc["distance"] <= 1.8 and doc["keyword_score"] > 0:
-            filtered.append(doc)
+    return documents
