@@ -1,12 +1,10 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from database_query import get_all_shipments_with_delivery
 from database.risk_engine import build_risk_report
 
 import uuid
-import chromadb
-from sentence_transformers import SentenceTransformer
 
 from chatbot import chat
 from rag.retriever import get_shipment
@@ -39,8 +37,6 @@ app.add_middleware(
 # Constants
 # =====================================================
 
-CHUNK_SIZE = 250
-COLLECTION_NAME = "logistics_documents"
 
 CUSTOMER_FILTERS = {
 
@@ -99,19 +95,6 @@ SHIPMENT_FILTERS = {
     }
 
 }
-
-# =====================================================
-# Models
-# =====================================================
-'''
-embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
-
-client = chromadb.PersistentClient(path="chroma_db")
-
-collection = client.get_or_create_collection(
-    name=COLLECTION_NAME
-)
-'''
 
 # =====================================================
 # Request Model
@@ -190,123 +173,6 @@ def shipment_api(shipment_id: str):
             status_code=500,
             detail=str(e)
         )
-
-# =====================================================
-# Upload Document
-# =====================================================
-
-@app.post("/upload-doc")
-async def upload_document(file: UploadFile = File(...)):
-    embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
-    try:
-
-        # -----------------------------
-        # Validate File
-        # -----------------------------
-
-        if not file.filename.endswith(".txt"):
-
-            raise HTTPException(
-                status_code=400,
-                detail="Only .txt files are allowed."
-            )
-
-        # -----------------------------
-        # Read File
-        # -----------------------------
-
-        content = (await file.read()).decode("utf-8")
-
-        words = content.split()
-
-        chunks = [
-
-            " ".join(words[i:i + CHUNK_SIZE])
-
-            for i in range(0, len(words), CHUNK_SIZE)
-
-        ]
-
-        chunks = [
-
-            chunk
-
-            for chunk in chunks
-
-            if chunk.strip()
-
-        ]
-
-        if len(chunks) == 0:
-
-            raise HTTPException(
-                status_code=400,
-                detail="Uploaded file is empty."
-            )
-
-        # -----------------------------
-        # Generate Embeddings
-        # -----------------------------
-
-        embeddings = embedding_model.encode(
-            chunks,
-            normalize_embeddings=True
-        ).tolist()
-
-        # -----------------------------
-        # Store in ChromaDB
-        # -----------------------------
-
-        for i, chunk in enumerate(chunks):
-
-            collection.add(
-
-                ids=[str(uuid.uuid4())],
-
-                documents=[chunk],
-
-                embeddings=[embeddings[i]],
-
-                metadatas=[
-
-                    {
-
-                        "document_name": file.filename,
-
-                        "chunk": i + 1,
-
-                        "document_type": "uploaded_document"
-
-                    }
-
-                ]
-
-            )
-
-        return {
-
-            "message": "Document uploaded successfully.",
-
-            "filename": file.filename,
-
-            "chunks_created": len(chunks)
-
-        }
-
-    except HTTPException:
-        raise
-
-    except Exception as e:
-
-        raise HTTPException(
-
-            status_code=500,
-
-            detail=str(e)
-
-        )
-
-
 
 @app.get("/risk-report")
 def risk_report():
