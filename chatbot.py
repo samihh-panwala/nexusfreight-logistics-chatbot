@@ -1,3 +1,4 @@
+print("CHATBOT IMPORT START")
 print("1")
 from system_prompt import SYSTEM_PROMPT
 
@@ -46,7 +47,7 @@ from utils.greetings import (
 
 import json
 import re
-
+print("CHATBOT IMPORT END")
 memory = ConversationMemory()
 import hybrid_router
 '''

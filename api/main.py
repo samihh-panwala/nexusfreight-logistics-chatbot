@@ -1,14 +1,22 @@
+print("1")
 from fastapi import FastAPI, HTTPException
+print("2")
 from fastapi.middleware.cors import CORSMiddleware
+print("3")
 from pydantic import BaseModel
+print("4")
 from database_query import get_all_shipments_with_delivery
+print("5")
 from database.risk_engine import build_risk_report
-
+print("6")
 import uuid
-
+print("7")
 from chatbot import chat
+print("8")
 from rag.retriever import get_shipment
+print("9")
 from typing import List
+print("10")
 from pydantic import BaseModel
 
 # =====================================================
