@@ -15,8 +15,6 @@ supabase = create_client(
 
 print("✅ Supabase Connected")
 
-print("Loading embedding model...")
-
 model = None
 
 def get_model():

@@ -18,6 +18,7 @@ print("9")
 from typing import List
 print("10")
 from pydantic import BaseModel
+import traceback
 
 # =====================================================
 # FastAPI App
@@ -147,9 +148,11 @@ def chatbot_api(request: ChatRequest):
         }
 
     except Exception as e:
+        traceback.print_exc()
+
         raise HTTPException(
             status_code=500,
-            detail=f"Chatbot Error: {str(e)}"
+            detail=str(e)
         )
 
 # =====================================================
