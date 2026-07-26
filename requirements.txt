@@ -27,5 +27,3 @@ tqdm>=4.66.5
 python-dotenv>=1.0.1
 
 
-sentence-transformers>=3.0.1
-torch>=2.3.0
