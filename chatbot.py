@@ -1,3 +1,32 @@
+print("1")
+from system_prompt import SYSTEM_PROMPT
+
+print("2")
+from llm_manager import generate_response
+
+print("3")
+from hybrid_router import route_query
+
+print("4")
+from sql_engine import execute_sql
+
+print("5")
+
+from rag.search import search_documents
+
+print("5.5")
+
+from memory import ConversationMemory
+
+print("6")
+from memory import ConversationMemory
+
+print("7")
+from prompt_builder import build_messages
+
+print("8")
+
+'''
 from system_prompt import SYSTEM_PROMPT
 from llm_manager import generate_response
 
@@ -7,6 +36,7 @@ from rag.search import search_documents
 
 from memory import ConversationMemory
 from prompt_builder import build_messages
+'''
 from utils.greetings import (
     is_greeting,
     greeting_response,
@@ -19,13 +49,13 @@ import re
 
 memory = ConversationMemory()
 import hybrid_router
-
+'''
 print("=" * 60)
 print("HYBRID ROUTER FILE:")
 print(hybrid_router.__file__)
 print("=" * 60)
 print(route_query("show shipment 5fd50c5c-973f-43bc-a629-06e4b5cd541b"))
-
+'''
 
 def format_sql_context(result):
 
@@ -628,7 +658,7 @@ def chat(user_query):
 
     if query_type == "VECTOR":
 
-        source = "ChromaDB"
+        source = "Supabase Vector DB"
 
         docs = search_documents(user_query)
         if not docs:

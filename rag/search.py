@@ -15,14 +15,26 @@ supabase = create_client(
 
 print("✅ Supabase Connected")
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+print("Loading embedding model...")
+
+model = None
+
+def get_model():
+    global model
+
+    if model is None:
+        print("Loading embedding model...")
+        model = SentenceTransformer("all-MiniLM-L6-v2")
+        print("Embedding model loaded.")
+
+    return model
 
 print("✅ Embedding Model Loaded")
 
 
 def search_documents(query, top_k=5):
 
-    embedding = model.encode(query).tolist()
+    embedding = get_model().encode(query).tolist()
 
     response = supabase.rpc(
         "match_documents",

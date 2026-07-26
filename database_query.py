@@ -401,3 +401,132 @@ def get_unique_values(table, column):
             values.add(str(value))
 
     return list(values)
+
+def query_top_carriers():
+
+    shipments = (
+        supabase.table("shipments")
+        .select("carrier_id")
+        .execute()
+        .data
+    )
+
+    carriers = (
+        supabase.table("carriers")
+        .select("*")
+        .execute()
+        .data
+    )
+
+    carrier_map = {
+        c["carrier_id"]: c["carrier_name"]
+        for c in carriers
+    }
+
+    counts = {}
+
+    for row in shipments:
+
+        cid = row["carrier_id"]
+        counts[cid] = counts.get(cid, 0) + 1
+
+    result = []
+
+    for cid, total in counts.items():
+
+        result.append({
+            "carrier_name": carrier_map.get(cid, cid),
+            "total_shipments": total
+        })
+
+    result.sort(
+        key=lambda x: x["total_shipments"],
+        reverse=True
+    )
+
+    return result
+
+def query_top_customers():
+
+    shipments = (
+        supabase.table("shipments")
+        .select("customer_id")
+        .execute()
+        .data
+    )
+
+    customers = (
+        supabase.table("customers")
+        .select("*")
+        .execute()
+        .data
+    )
+
+    customer_map = {
+        c["customer_id"]: c["customer_name"]
+        for c in customers
+    }
+
+    counts = {}
+
+    for row in shipments:
+
+        cid = row["customer_id"]
+        counts[cid] = counts.get(cid, 0) + 1
+
+    result = []
+
+    for cid, total in counts.items():
+
+        result.append({
+            "customer_name": customer_map.get(cid, cid),
+            "total_shipments": total
+        })
+
+    result.sort(
+        key=lambda x: x["total_shipments"],
+        reverse=True
+    )
+
+    return result
+
+def query_top_warehouses():
+
+    warehouses = (
+        supabase.table("warehouses")
+        .select("*")
+        .execute()
+        .data
+    )
+
+    warehouses.sort(
+        key=lambda x: x.get("utilization_percentage", 0),
+        reverse=True
+    )
+
+    return warehouses
+
+def query_average_weight():
+
+    shipments = (
+        supabase.table("shipments")
+        .select("weight")
+        .execute()
+        .data
+    )
+
+    if not shipments:
+        return {"average_weight": 0}
+
+    total = 0
+
+    for row in shipments:
+        total += row["weight"]
+
+    avg = total / len(shipments)
+
+    return {
+        "average_weight": round(avg, 2)
+    }
+    
+print("DATABASE_QUERY IMPORTED FINISHED")

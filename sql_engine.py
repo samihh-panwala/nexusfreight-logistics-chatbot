@@ -6,7 +6,13 @@ from database_query import (
     query_like,
     query_count,
     get_complete_shipment,
-    get_all_shipments_with_delivery
+    get_all_shipments_with_delivery,
+
+    # Analytics
+    query_top_carriers,
+    query_top_customers,
+    query_top_warehouses,
+    query_average_weight
 )
 
 # ==========================================================
@@ -112,7 +118,6 @@ RISK_LEVELS = {
 # ==========================================================
 
 ENTITY_SYNONYMS = {
-
     "shipment": [
         "shipment",
         "shipments",
@@ -259,7 +264,6 @@ ENTITY_SYNONYMS = {
 # ==========================================================
 
 INTENTS = {
-
     "count": [
         "count",
         "how many",
@@ -324,11 +328,9 @@ INTENTS = {
 # ==========================================================
 
 def has_entity(query, entity):
-
     query = query.lower()
 
     for word in ENTITY_SYNONYMS.get(entity, []):
-
         if re.search(rf"\b{re.escape(word)}\b", query):
             return True
 
@@ -336,13 +338,10 @@ def has_entity(query, entity):
 
 
 def detect_intent(query):
-
     query = query.lower()
 
     for intent, words in INTENTS.items():
-
         for word in words:
-
             if word in query:
                 return intent
 
@@ -350,11 +349,9 @@ def detect_intent(query):
 
 
 def keyword_filter(query, mapping):
-
     query = query.lower()
 
     for keyword, value in mapping.items():
-
         if keyword in query:
             return value
 
@@ -362,11 +359,9 @@ def keyword_filter(query, mapping):
 
 
 def extract_city(query):
-
     query = query.lower()
 
     for city in CITY_NAMES:
-
         if city in query:
             return city.title()
 
@@ -374,11 +369,9 @@ def extract_city(query):
 
 
 def extract_country(query):
-
     query = query.lower()
 
     for country in COUNTRIES:
-
         if country in query:
             return country.title()
 
@@ -386,14 +379,11 @@ def extract_country(query):
 
 
 def extract_booking_id(query):
-
     match = re.search(r"ALC-\d{4}-\d+", query, re.I)
-
     return match.group() if match else None
 
 
 def extract_shipment_uuid(query):
-
     match = re.search(
         r"[0-9a-f]{8}-"
         r"[0-9a-f]{4}-"
@@ -417,19 +407,14 @@ def execute_sql(query):
     intent = detect_intent(query)
 
     booking_id = extract_booking_id(query)
-
     shipment_uuid = extract_shipment_uuid(query)
 
     city = extract_city(query)
-
     country = extract_country(query)
-    
-    
+
     # =====================================================
     # ANALYTICS QUERIES
     # =====================================================
-
-    # Top carrier
 
     if (
         "top carrier" in query_lower
@@ -438,26 +423,17 @@ def execute_sql(query):
     ):
         return query_top_carriers()
 
-
-    # Top customer
-
     if (
         "top customer" in query_lower
         or "highest customer" in query_lower
     ):
         return query_top_customers()
 
-
-    # Top warehouse
-
     if (
         "highest utilization" in query_lower
         or "warehouse utilization" in query_lower
     ):
         return query_top_warehouses()
-
-
-    # Average shipment weight
 
     if (
         "average weight" in query_lower
@@ -471,9 +447,9 @@ def execute_sql(query):
 
     if has_entity(query, "shipment"):
 
-        # -------------------------------------------------
-        # Search using Booking ID
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Booking ID
+        # -----------------------------------------------
 
         if booking_id:
 
@@ -484,33 +460,24 @@ def execute_sql(query):
             )
 
             if shipment:
-
                 return get_complete_shipment(
                     shipment[0]["shipment_id"]
                 )
 
             return {
-                "message":
-                "No shipment found for this Booking ID."
+                "message": "No shipment found for this Booking ID."
             }
 
-        # -------------------------------------------------
-        # Search using Shipment UUID
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Shipment UUID
+        # -----------------------------------------------
 
         if shipment_uuid:
+            return get_complete_shipment(shipment_uuid)
 
-            print("Searching shipment:", shipment_uuid)
-
-            result = get_complete_shipment(shipment_uuid)
-
-            print(result)
-
-            return result
-
-        # -------------------------------------------------
-        # Total Shipment Count
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Shipment Count
+        # -----------------------------------------------
 
         if intent == "count":
 
@@ -519,9 +486,9 @@ def execute_sql(query):
                 query_count("shipments")
             }
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Delayed Shipments
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if intent == "delay":
 
@@ -534,14 +501,13 @@ def execute_sql(query):
                 )
 
                 if shipment["delay_days"] > 0:
-
                     delayed.append(shipment)
 
             return delayed
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Shipment Risk
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if intent == "risk":
 
@@ -552,7 +518,7 @@ def execute_sql(query):
 
             if level:
 
-                data = []
+                result = []
 
                 for row in get_all_shipments_with_delivery():
 
@@ -561,14 +527,13 @@ def execute_sql(query):
                     )
 
                     if shipment["risk_level"] == level:
+                        result.append(shipment)
 
-                        data.append(shipment)
+                return result
 
-                return data
-
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Shipment Status
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         status = keyword_filter(
             query,
@@ -576,16 +541,15 @@ def execute_sql(query):
         )
 
         if status:
-
             return query_where(
                 "shipment_delivery_history",
                 "delivery_status",
                 status
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Shipment Type
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         shipment_type = keyword_filter(
             query,
@@ -593,16 +557,15 @@ def execute_sql(query):
         )
 
         if shipment_type:
-
             return query_where(
                 "shipments",
                 "shipment_type",
                 shipment_type
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Shipment Priority
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         priority = keyword_filter(
             query,
@@ -610,16 +573,15 @@ def execute_sql(query):
         )
 
         if priority:
-
             return query_where(
                 "shipments",
                 "priority",
                 priority
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Shipping Mode
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         shipping_mode = keyword_filter(
             query,
@@ -627,43 +589,40 @@ def execute_sql(query):
         )
 
         if shipping_mode:
-
             return query_where(
                 "shipments",
                 "shipping_mode",
                 shipping_mode
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Fragile Shipments
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if "fragile" in query_lower:
-
             return query_where(
                 "shipments",
                 "fragile",
                 True
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Insured Shipments
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if (
             "insured" in query_lower
             or "insurance" in query_lower
         ):
-
             return query_where(
                 "shipments",
                 "insurance",
                 True
             )
 
-        # -------------------------------------------------
-        # Shipment by City
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Search by Origin/Destination City
+        # -----------------------------------------------
 
         if city:
 
@@ -674,7 +633,6 @@ def execute_sql(query):
             )
 
             if shipments:
-
                 return shipments
 
             return query_like(
@@ -683,9 +641,9 @@ def execute_sql(query):
                 city
             )
 
-        # -------------------------------------------------
-        # Shipment by Country
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Search by Origin/Destination Country
+        # -----------------------------------------------
 
         if country:
 
@@ -696,7 +654,6 @@ def execute_sql(query):
             )
 
             if shipments:
-
                 return shipments
 
             return query_like(
@@ -705,177 +662,31 @@ def execute_sql(query):
                 country
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Default
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         return get_all_shipments_with_delivery()
-
-        # -------------------------------------------------
-        # Shipment Status
-        # -------------------------------------------------
-
-        status = keyword_filter(
-            query,
-            DELIVERY_STATUS
-        )
-
-        if status:
-
-            return query_where(
-                "shipment_delivery_history",
-                "delivery_status",
-                status
-            )
-
-        # -------------------------------------------------
-        # Shipment Type
-        # -------------------------------------------------
-
-        shipment_type = keyword_filter(
-            query,
-            SHIPMENT_TYPE
-        )
-
-        if shipment_type:
-
-            return query_where(
-                "shipments",
-                "shipment_type",
-                shipment_type
-            )
-
-        # -------------------------------------------------
-        # Shipment Priority
-        # -------------------------------------------------
-
-        priority = keyword_filter(
-            query,
-            SHIPMENT_PRIORITY
-        )
-
-        if priority:
-
-            return query_where(
-                "shipments",
-                "priority",
-                priority
-            )
-
-        # -------------------------------------------------
-        # Shipping Mode
-        # -------------------------------------------------
-
-        shipping_mode = keyword_filter(
-            query,
-            CARRIER_TYPES
-        )
-
-        if shipping_mode:
-
-            return query_where(
-                "shipments",
-                "shipping_mode",
-                shipping_mode
-            )
-
-        # -------------------------------------------------
-        # Fragile Shipments
-        # -------------------------------------------------
-
-        if "fragile" in query_lower:
-
-            return query_where(
-                "shipments",
-                "fragile",
-                True
-            )
-
-        # -------------------------------------------------
-        # Insured Shipments
-        # -------------------------------------------------
-
-        if (
-            "insured" in query_lower
-            or "insurance" in query_lower
-        ):
-
-            return query_where(
-                "shipments",
-                "insurance",
-                True
-            )
-
-        # -------------------------------------------------
-        # Shipment by City
-        # -------------------------------------------------
-
-        if city:
-
-            shipments = query_like(
-                "shipments",
-                "origin_city",
-                city
-            )
-
-            if shipments:
-
-                return shipments
-
-            return query_like(
-                "shipments",
-                "destination_city",
-                city
-            )
-
-        # -------------------------------------------------
-        # Shipment by Country
-        # -------------------------------------------------
-
-        if country:
-
-            shipments = query_like(
-                "shipments",
-                "origin_country",
-                country
-            )
-
-            if shipments:
-
-                return shipments
-
-            return query_like(
-                "shipments",
-                "destination_country",
-                country
-            )
-
-        # -------------------------------------------------
-        # Default
-        # -------------------------------------------------
-
-        return get_all_shipments_with_delivery()
-
+    
     # =====================================================
     # CUSTOMER QUERIES
     # =====================================================
 
     if has_entity(query, "customer"):
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Total Customers
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if intent == "count":
-
             return {
                 "Total Customers":
                 query_count("customers")
             }
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Customer Status
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         status = keyword_filter(
             query,
@@ -883,16 +694,15 @@ def execute_sql(query):
         )
 
         if status:
-
             return query_where(
                 "customers",
                 "customer_status",
                 status
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Customer Type
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         customer_type = keyword_filter(
             query,
@@ -900,63 +710,55 @@ def execute_sql(query):
         )
 
         if customer_type:
-
             return query_where(
                 "customers",
                 "customer_type",
                 customer_type
             )
 
-        # -------------------------------------------------
-        # City Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # City
+        # -----------------------------------------------
 
         if city:
-
             return query_where(
                 "customers",
                 "city",
                 city
             )
 
-        # -------------------------------------------------
-        # Country Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Country
+        # -----------------------------------------------
 
         if country:
-
             return query_where(
                 "customers",
                 "country",
                 country
             )
 
-        # -------------------------------------------------
-        # Customer Name Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Customer Name
+        # -----------------------------------------------
 
         name = query_lower
 
         remove_words = [
-
             "show",
             "list",
             "display",
             "find",
             "give",
-
             "customer",
             "customers",
-
             "client",
             "clients",
-
             "buyer",
             "buyers"
         ]
 
         for word in remove_words:
-
             name = name.replace(word, "")
 
         name = name.strip()
@@ -970,12 +772,7 @@ def execute_sql(query):
             )
 
             if data:
-
                 return data
-
-        # -------------------------------------------------
-        # Default
-        # -------------------------------------------------
 
         return query_table("customers")
 
@@ -985,108 +782,101 @@ def execute_sql(query):
 
     if has_entity(query, "product"):
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Total Products
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if intent == "count":
-
             return {
                 "Total Products":
                 query_count("products")
             }
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Product Category
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         for category in PRODUCT_CATEGORIES:
 
             if category in query_lower:
-
                 return query_where(
                     "products",
                     "category",
                     category.title()
                 )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Fragile Products
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if "fragile" in query_lower:
-
             return query_where(
                 "products",
                 "fragile",
                 True
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Hazardous Products
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if (
             "hazardous" in query_lower
             or "dangerous" in query_lower
         ):
-
             return query_where(
                 "products",
                 "hazardous",
                 True
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Perishable Products
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if (
             "perishable" in query_lower
             or "fresh" in query_lower
         ):
-
             return query_where(
                 "products",
                 "perishable",
                 True
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Temperature Controlled Products
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if (
             "temperature" in query_lower
             or "cold" in query_lower
             or "cold chain" in query_lower
         ):
-
             return query_where(
                 "products",
                 "temperature_controlled",
                 True
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Supplier Search
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         supplier = query_lower
 
-        supplier_words = [
+        remove_words = [
             "supplier",
             "supplied",
-            "products",
             "product",
+            "products",
             "show",
             "list",
             "find",
             "give"
         ]
 
-        for word in supplier_words:
-
+        for word in remove_words:
             supplier = supplier.replace(word, "")
 
         supplier = supplier.strip()
@@ -1100,39 +890,30 @@ def execute_sql(query):
             )
 
             if data:
-
                 return data
 
-        # -------------------------------------------------
-        # Product Name Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Product Name
+        # -----------------------------------------------
 
         product_name = query_lower
 
         remove_words = [
-
             "show",
             "list",
             "display",
             "find",
             "give",
-
             "product",
             "products",
-
             "item",
             "items",
-
             "goods",
             "commodity"
         ]
 
         for word in remove_words:
-
-            product_name = product_name.replace(
-                word,
-                ""
-            )
+            product_name = product_name.replace(word, "")
 
         product_name = product_name.strip()
 
@@ -1145,35 +926,25 @@ def execute_sql(query):
             )
 
             if data:
-
                 return data
 
-        # -------------------------------------------------
-        # Default
-        # -------------------------------------------------
-
         return query_table("products")
-
+    
     # =====================================================
     # CARRIER QUERIES
     # =====================================================
 
     if has_entity(query, "carrier"):
 
-        # -------------------------------------------------
-        # Total Carriers
-        # -------------------------------------------------
-
         if intent == "count":
-
             return {
                 "Total Carriers":
                 query_count("carriers")
             }
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Carrier Type
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         carrier_type = keyword_filter(
             query,
@@ -1181,33 +952,30 @@ def execute_sql(query):
         )
 
         if carrier_type:
-
             return query_where(
                 "carriers",
                 "carrier_type",
                 carrier_type
             )
 
-        # -------------------------------------------------
-        # Country Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Headquarters Country
+        # -----------------------------------------------
 
         if country:
-
             return query_like(
                 "carriers",
                 "headquarters",
                 country
             )
 
-        # -------------------------------------------------
-        # Carrier Name Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Carrier Name
+        # -----------------------------------------------
 
         carrier_name = query_lower
 
         remove_words = [
-
             "carrier",
             "carriers",
             "shipping company",
@@ -1215,7 +983,6 @@ def execute_sql(query):
             "transport",
             "transporter",
             "courier",
-
             "show",
             "list",
             "display",
@@ -1224,11 +991,7 @@ def execute_sql(query):
         ]
 
         for word in remove_words:
-
-            carrier_name = carrier_name.replace(
-                word,
-                ""
-            )
+            carrier_name = carrier_name.replace(word, "")
 
         carrier_name = carrier_name.strip()
 
@@ -1241,11 +1004,9 @@ def execute_sql(query):
             )
 
             if data:
-
                 return data
 
         return query_table("carriers")
-
 
     # =====================================================
     # WAREHOUSE QUERIES
@@ -1253,35 +1014,28 @@ def execute_sql(query):
 
     if has_entity(query, "warehouse"):
 
-        # -------------------------------------------------
-        # Total Warehouses
-        # -------------------------------------------------
-
         if intent == "count":
-
             return {
                 "Total Warehouses":
                 query_count("warehouses")
             }
 
-        # -------------------------------------------------
-        # City Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # City
+        # -----------------------------------------------
 
         if city:
-
             return query_where(
                 "warehouses",
                 "city",
                 city
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Warehouse Type
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if "regional" in query_lower:
-
             return query_where(
                 "warehouses",
                 "warehouse_type",
@@ -1289,32 +1043,29 @@ def execute_sql(query):
             )
 
         if "central" in query_lower:
-
             return query_where(
                 "warehouses",
                 "warehouse_type",
                 "Central"
             )
 
-        # -------------------------------------------------
+        # -----------------------------------------------
         # Capacity / Utilization
-        # -------------------------------------------------
+        # -----------------------------------------------
 
         if (
             "capacity" in query_lower
             or "utilization" in query_lower
         ):
-
             return query_table("warehouses")
 
-        # -------------------------------------------------
-        # Warehouse Name Search
-        # -------------------------------------------------
+        # -----------------------------------------------
+        # Warehouse Name
+        # -----------------------------------------------
 
         warehouse_name = query_lower
 
         remove_words = [
-
             "warehouse",
             "warehouses",
             "storage",
@@ -1323,7 +1074,6 @@ def execute_sql(query):
             "distribution center",
             "hub",
             "depot",
-
             "show",
             "list",
             "display",
@@ -1332,11 +1082,7 @@ def execute_sql(query):
         ]
 
         for word in remove_words:
-
-            warehouse_name = warehouse_name.replace(
-                word,
-                ""
-            )
+            warehouse_name = warehouse_name.replace(word, "")
 
         warehouse_name = warehouse_name.strip()
 
@@ -1349,11 +1095,10 @@ def execute_sql(query):
             )
 
             if data:
-
                 return data
 
         return query_table("warehouses")
-    
+
     # =====================================================
     # ROUTE QUERIES
     # =====================================================
@@ -1361,7 +1106,6 @@ def execute_sql(query):
     if has_entity(query, "route"):
 
         if intent == "count":
-
             return {
                 "Total Routes":
                 query_count("routes")
@@ -1377,7 +1121,6 @@ def execute_sql(query):
         )
 
         if risk:
-
             return query_where(
                 "routes",
                 "route_risk",
@@ -1419,8 +1162,7 @@ def execute_sql(query):
             )
 
         return query_table("routes")
-
-
+    
     # =====================================================
     # VEHICLE QUERIES
     # =====================================================
@@ -1428,14 +1170,16 @@ def execute_sql(query):
     if has_entity(query, "vehicle"):
 
         if intent == "count":
-
             return {
                 "Total Vehicles":
                 query_count("vehicles")
             }
 
-        if "diesel" in query_lower:
+        # -----------------------------------------------
+        # Fuel Type
+        # -----------------------------------------------
 
+        if "diesel" in query_lower:
             return query_where(
                 "vehicles",
                 "fuel_type",
@@ -1443,25 +1187,30 @@ def execute_sql(query):
             )
 
         if "electric" in query_lower:
-
             return query_where(
                 "vehicles",
                 "fuel_type",
                 "Electric"
             )
 
+        # -----------------------------------------------
+        # Vehicle Type
+        # -----------------------------------------------
+
         for vehicle in VEHICLE_TYPES:
 
             if vehicle in query_lower:
-
                 return query_where(
                     "vehicles",
                     "vehicle_type",
                     vehicle.title()
                 )
 
-        if "good" in query_lower:
+        # -----------------------------------------------
+        # Maintenance Status
+        # -----------------------------------------------
 
+        if "good" in query_lower:
             return query_where(
                 "vehicles",
                 "maintenance_status",
@@ -1469,12 +1218,15 @@ def execute_sql(query):
             )
 
         if "poor" in query_lower:
-
             return query_where(
                 "vehicles",
                 "maintenance_status",
                 "Poor"
             )
+
+        # -----------------------------------------------
+        # Vehicle Number
+        # -----------------------------------------------
 
         vehicle_number = re.search(
             r"[A-Z]{2}-\d{4}-\d+",
@@ -1483,7 +1235,6 @@ def execute_sql(query):
         )
 
         if vehicle_number:
-
             return query_where(
                 "vehicles",
                 "vehicle_number",
@@ -1492,7 +1243,6 @@ def execute_sql(query):
 
         return query_table("vehicles")
 
-
     # =====================================================
     # DELIVERY HISTORY
     # =====================================================
@@ -1500,12 +1250,9 @@ def execute_sql(query):
     if has_entity(query, "delivery"):
 
         if intent == "count":
-
             return {
                 "Total Delivery Records":
-                query_count(
-                    "shipment_delivery_history"
-                )
+                query_count("shipment_delivery_history")
             }
 
         status = keyword_filter(
@@ -1514,7 +1261,6 @@ def execute_sql(query):
         )
 
         if status:
-
             return query_where(
                 "shipment_delivery_history",
                 "delivery_status",
@@ -1522,7 +1268,6 @@ def execute_sql(query):
             )
 
         if shipment_uuid:
-
             return query_where(
                 "shipment_delivery_history",
                 "shipment_id",
@@ -1539,24 +1284,22 @@ def execute_sql(query):
 
     if has_entity(query, "weather"):
 
-        # ---------------------------------------------
-        # Search by City
-        # ---------------------------------------------
+        # -----------------------------------------------
+        # City Search
+        # -----------------------------------------------
 
         if city:
-
             return query_where(
                 "weather",
                 "city",
                 city
             )
 
-        # ---------------------------------------------
-        # Search by Weather Condition
-        # ---------------------------------------------
+        # -----------------------------------------------
+        # Weather Condition
+        # -----------------------------------------------
 
         weather_conditions = [
-
             "rain",
             "clear",
             "fog",
@@ -1570,7 +1313,6 @@ def execute_sql(query):
         for condition in weather_conditions:
 
             if condition in query_lower:
-
                 return query_like(
                     "weather",
                     "weather_condition",
@@ -1578,78 +1320,52 @@ def execute_sql(query):
                 )
 
         return query_table("weather")
-
-
+    
     # =====================================================
     # CUSTOMS QUERIES
     # =====================================================
 
     if has_entity(query, "customs"):
 
-        # ---------------------------------------------
-        # Search by Country
-        # ---------------------------------------------
-
         if country:
-
             return query_where(
                 "customs",
                 "destination_country",
                 country
             )
 
-        # ---------------------------------------------
-        # Inspection Required
-        # ---------------------------------------------
-
         if (
             "inspection" in query_lower
             or "inspect" in query_lower
         ):
-
             return query_where(
                 "customs",
                 "inspection_required",
                 True
             )
 
-        # ---------------------------------------------
-        # Documentation Complete
-        # ---------------------------------------------
-
         if (
             "documentation" in query_lower
             or "document" in query_lower
             or "papers" in query_lower
         ):
-
             return query_where(
                 "customs",
                 "documentation_complete",
                 True
             )
 
-        # ---------------------------------------------
-        # Customs Required
-        # ---------------------------------------------
-
         if (
             "required" in query_lower
             or "mandatory" in query_lower
         ):
-
             return query_where(
                 "customs",
                 "customs_required",
                 True
             )
 
-        # ---------------------------------------------
-        # Cargo Type Search
-        # ---------------------------------------------
-
         cargo_types = [
-
             "electronics",
             "machinery",
             "chemical",
@@ -1661,7 +1377,6 @@ def execute_sql(query):
         for cargo in cargo_types:
 
             if cargo in query_lower:
-
                 return query_where(
                     "customs",
                     "cargo_type",
@@ -1677,17 +1392,13 @@ def execute_sql(query):
     if has_entity(query, "feature"):
 
         if shipment_uuid:
-
             return query_where(
                 "ai_feature_store",
                 "shipment_id",
                 shipment_uuid
             )
 
-        return query_table(
-            "ai_feature_store"
-        )
-
+        return query_table("ai_feature_store")
 
     # =====================================================
     # AI INFERENCE LOG
@@ -1696,7 +1407,6 @@ def execute_sql(query):
     if has_entity(query, "prediction"):
 
         if shipment_uuid:
-
             return query_where(
                 "ai_inference_log",
                 "shipment_id",
@@ -1713,17 +1423,13 @@ def execute_sql(query):
         )
 
         if risk:
-
             return query_where(
                 "ai_inference_log",
                 "risk_category",
                 risk
             )
 
-        return query_table(
-            "ai_inference_log"
-        )
-
+        return query_table("ai_inference_log")
 
     # =====================================================
     # AI MODEL REGISTRY
@@ -1741,17 +1447,13 @@ def execute_sql(query):
         )
 
         if deployment:
-
             return query_where(
                 "ai_model_registry",
                 "deployment_status",
                 deployment
             )
 
-        return query_table(
-            "ai_model_registry"
-        )
-
+        return query_table("ai_model_registry")
 
     # =====================================================
     # AI MONITORING ALERTS
@@ -1760,7 +1462,6 @@ def execute_sql(query):
     if has_entity(query, "alert"):
 
         if shipment_uuid:
-
             return query_where(
                 "ai_monitoring_alerts",
                 "shipment_id",
@@ -1776,23 +1477,19 @@ def execute_sql(query):
         )
 
         if status:
-
             return query_where(
                 "ai_monitoring_alerts",
                 "alert_status",
                 status
             )
 
-        return query_table(
-            "ai_monitoring_alerts"
-        )
+        return query_table("ai_monitoring_alerts")
 
     # =====================================================
     # SMART FALLBACK SEARCH
     # =====================================================
 
     FALLBACK_TABLES = {
-
         "shipment": "shipments",
         "customer": "customers",
         "carrier": "carriers",
@@ -1807,42 +1504,38 @@ def execute_sql(query):
         "prediction": "ai_inference_log",
         "model": "ai_model_registry",
         "alert": "ai_monitoring_alerts"
-
     }
 
-    # -------------------------------------------------
     # Search using entity synonyms
-    # -------------------------------------------------
 
     for entity, table in FALLBACK_TABLES.items():
 
         if has_entity(query, entity):
-
             return query_table(table)
 
-    # -------------------------------------------------
     # Natural language fallback
-    # -------------------------------------------------
 
-    if any(word in query_lower for word in [
-        "show",
-        "list",
-        "display",
-        "find",
-        "search",
-        "give",
-        "fetch",
-        "view"
-    ]):
+    if any(
+        word in query_lower
+        for word in [
+            "show",
+            "list",
+            "display",
+            "find",
+            "search",
+            "give",
+            "fetch",
+            "view"
+        ]
+    ):
 
         for entity, table in FALLBACK_TABLES.items():
 
             if entity in query_lower:
-
                 return query_table(table)
 
-    # -------------------------------------------------
-    # Nothing Found
-    # -------------------------------------------------
+    # =====================================================
+    # NOTHING FOUND
+    # =====================================================
 
     return None
