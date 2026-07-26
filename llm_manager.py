@@ -1,7 +1,6 @@
 import time
 
 from providers.groq_provider import generate_response as groq_generate
-from providers.gemini_provider import generate_response as gemini_generate
 from providers.openrouter_provider import generate_response as openrouter_generate
 
 
@@ -9,8 +8,7 @@ PROVIDERS = [
 
     ("Groq", groq_generate),
 
-    ("Gemini", gemini_generate),
-
+    
     ("OpenRouter", openrouter_generate)
 
 ]
