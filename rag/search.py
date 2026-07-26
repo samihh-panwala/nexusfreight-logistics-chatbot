@@ -34,7 +34,9 @@ print("✅ Embedding Model Loaded")
 
 def search_documents(query, top_k=5):
 
-    embedding = get_model().encode(query).tolist()
+    embedding_model = get_model()
+
+    embedding = embedding_model.encode(query).tolist()
 
     response = supabase.rpc(
         "match_documents",
