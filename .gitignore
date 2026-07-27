@@ -4,7 +4,6 @@ venv/
 
 # Environment Variables
 .env
-config.py
 
 # Python Cache
 __pycache__/
@@ -14,7 +13,10 @@ __pycache__/
 # VS Code
 .vscode/
 
-# ChromaDB
+# PyCharm
+.idea/
+
+# ChromaDB (if ever used again)
 chroma_db/
 
 # Logs
@@ -22,6 +24,15 @@ chroma_db/
 
 # Temporary Files
 *.tmp
+
+# Build
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+config.py 
 
 # OS Files
 .DS_Store

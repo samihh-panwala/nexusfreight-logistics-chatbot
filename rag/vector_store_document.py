@@ -1,11 +1,13 @@
 import os
 import uuid
+import time
 from pathlib import Path
 
 from dotenv import load_dotenv
 from supabase import create_client
-from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
+
+from providers.jina_embedding import get_embedding
 
 load_dotenv()
 
@@ -17,18 +19,16 @@ supabase = create_client(
     SUPABASE_KEY
 )
 
-print("✅ Connected to Supabase")
-
-print("Loading embedding model...")
-model = SentenceTransformer("all-MiniLM-L6-v2")
-print("✅ Embedding model loaded")
-
 DOCUMENT_FOLDER = "documents"
 
-CHUNK_SIZE = 500
-OVERLAP = 100
+CHUNK_SIZE = 200
+OVERLAP = 40
 
-def chunk_text(text, chunk_size=500, overlap=100):
+UPLOAD_BATCH_SIZE = 20
+BATCH_SLEEP = 10
+
+
+def chunk_text(text):
 
     words = text.split()
 
@@ -38,23 +38,20 @@ def chunk_text(text, chunk_size=500, overlap=100):
 
     while start < len(words):
 
-        end = start + chunk_size
+        end = start + CHUNK_SIZE
 
-        chunk = " ".join(words[start:end])
+        chunks.append(" ".join(words[start:end]))
 
-        chunks.append(chunk)
-
-        start += chunk_size - overlap
+        start += CHUNK_SIZE - OVERLAP
 
     return chunks
+
 
 def read_documents():
 
     all_chunks = []
 
-    document_path = Path(DOCUMENT_FOLDER)
-
-    txt_files = list(document_path.glob("*.txt"))
+    txt_files = list(Path(DOCUMENT_FOLDER).glob("*.txt"))
 
     print(f"\nFound {len(txt_files)} text files.\n")
 
@@ -66,7 +63,7 @@ def read_documents():
 
             text = f.read()
 
-        chunks = chunk_text(text, CHUNK_SIZE, OVERLAP)
+        chunks = chunk_text(text)
 
         print(f"   {len(chunks)} chunks created")
 
@@ -98,23 +95,52 @@ def read_documents():
 
     return all_chunks
 
-def upload_chunks(chunks):
 
-    BATCH_SIZE = 100
+def chunk_exists(chunk_id):
+    response = (
+        supabase
+        .table("document_embeddings")
+        .select("chunk_id")
+        .eq("chunk_id", chunk_id)
+        .limit(1)
+        .execute()
+    )
+
+    return len(response.data) > 0
+
+def upload_chunks(chunks):
 
     total = len(chunks)
 
     print(f"\nUploading {total} chunks...\n")
 
-    for i in tqdm(range(0, total, BATCH_SIZE)):
+    for batch_start in tqdm(range(0, total, UPLOAD_BATCH_SIZE)):
 
-        batch = chunks[i:i+BATCH_SIZE]
+        batch = chunks[batch_start:batch_start + UPLOAD_BATCH_SIZE]
 
         records = []
 
         for chunk in batch:
 
-            embedding = model.encode(chunk["content"]).tolist()
+            while True:
+
+                try:
+                    
+                    # Skip already uploaded chunks
+                    if chunk_exists(chunk["chunk_id"]):
+                        print(f"Skipping {chunk['chunk_id']}")
+                        continue
+                    embedding = get_embedding(chunk["content"])
+
+                    break
+
+                except Exception as e:
+
+                    print(f"\nEmbedding Error: {e}")
+
+                    print("Waiting 60 seconds...")
+
+                    time.sleep(60)
 
             records.append({
 
@@ -136,17 +162,34 @@ def upload_chunks(chunks):
 
             })
 
-        supabase.table("document_embeddings").insert(records).execute()
+        while True:
+
+            try:
+
+                if records:
+                    supabase.table("document_embeddings").insert(records).execute()
+
+                break
+
+            except Exception as e:
+
+                print(f"\nUpload Error: {e}")
+
+                print("Retrying in 30 seconds...")
+
+                time.sleep(30)
+
+        print(f"Uploaded {min(batch_start + UPLOAD_BATCH_SIZE, total)} / {total}")
+
+        time.sleep(BATCH_SLEEP)
 
     print("\n✅ Upload Completed")
-    
 
 
-#####
 if __name__ == "__main__":
 
     chunks = read_documents()
 
-    print("\nTotal Chunks:", len(chunks))
+    print(f"\nTotal Chunks: {len(chunks)}")
 
     upload_chunks(chunks)
