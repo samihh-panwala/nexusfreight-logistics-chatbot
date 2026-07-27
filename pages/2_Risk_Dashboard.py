@@ -993,7 +993,7 @@ try:
 
     with st.spinner("Loading shipment analytics..."):
 
-        response = requests.get(f"{BASE_URL}/risk-report")
+        response = requests.get(f"{API_URL}/risk-report")
         response.raise_for_status()
 
         report = response.json()
