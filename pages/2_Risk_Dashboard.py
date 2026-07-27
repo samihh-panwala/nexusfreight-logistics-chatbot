@@ -15,7 +15,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-API_URL = "http://127.0.0.1:8000/risk-report"
+API_URL = "https://nexusfreight-api.onrender.com"
 
 # ==========================================================
 # MODERN CSS (SAME AS AI ASSISTANT)
@@ -993,7 +993,7 @@ try:
 
     with st.spinner("Loading shipment analytics..."):
 
-        response = requests.get(API_URL, timeout=60)
+        response = requests.get(f"{BASE_URL}/risk-report")
         response.raise_for_status()
 
         report = response.json()
