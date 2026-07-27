@@ -73,23 +73,24 @@ display:none;
 
 .block-container{
 
-padding-top:25px;
+max-width:1350px;
 
-padding-left:45px;
+padding-top:12px;
 
-padding-right:45px;
+padding-left:28px;
 
-padding-bottom:20px;
+padding-right:28px;
+
+padding-bottom:10px;
 
 }
-
 /* -------------------- Sidebar -------------------- */
 
 section[data-testid="stSidebar"]{
 
 background:#FCFDFB;
 
-width:320px !important;
+width:270px !important;
 
 border-right:1px solid #D8E2D1;
 
@@ -105,7 +106,7 @@ background:linear-gradient(
 #8AA58A
 );
 
-padding:28px;
+padding:20px;
 
 border-radius:22px;
 
@@ -117,7 +118,7 @@ box-shadow:0 12px 28px rgba(109,139,116,.28);
 
 .logo-title{
 
-font-size:30px;
+font-size:22px;
 
 font-weight:700;
 
@@ -129,7 +130,7 @@ margin-bottom:8px;
 
 .logo-sub{
 
-font-size:14px;
+font-size:12px;
 
 color:rgba(255,255,255,.9);
 
@@ -141,7 +142,7 @@ line-height:1.6;
 
 .nav-title{
 
-font-size:24px;
+font-size:18px;
 font-weight:700;
 color:#5F7161;
 letter-spacing:.5px;
@@ -176,7 +177,7 @@ box-shadow:0 5px 16px rgba(0,0,0,.04);
 
 .stButton>button p{
 
-font-size:22px !important;
+font-size:17px !important;
 
 font-weight:700 !important;
 
@@ -204,7 +205,7 @@ margin-bottom:28px;
 
 background:#FBFCFA;
 
-padding:18px;
+padding:14px;
 
 border-radius:18px;
 
@@ -218,7 +219,7 @@ box-shadow:0 6px 18px rgba(0,0,0,.03);
 
 .status-title{
 
-font-size:15px;
+font-size:12px;
 
 font-weight:700;
 
@@ -240,9 +241,9 @@ padding:7px 0;
 
 background:#FCFDFB;
 
-padding:42px;
+padding:28px;
 
-border-radius:28px;
+border-radius:18px;
 
 box-shadow:0 12px 30px rgba(0,0,0,.05);
 
@@ -254,7 +255,7 @@ border:1px solid #D6E2D2;
 
 .hero h1{
 
-font-size:46px;
+font-size:34px;
 
 font-weight:700;
 
@@ -266,11 +267,11 @@ margin-bottom:12px;
 
 .hero p{
 
-font-size:19px;
+font-size:16px;
 
 color:#667566;
 
-line-height:1.8;
+line-height:1.6;
 
 }
 
@@ -280,9 +281,9 @@ line-height:1.8;
 
 background:#FCFDFB;
 
-border-radius:22px;
+border-radius:16px;
 
-padding:24px 26px;
+padding:18px 20px;
 
 margin-bottom:16px;
 
@@ -332,11 +333,11 @@ border:1px solid #D8E2D1;
 
 border-radius:14px;
 
-font-size:13px;
+font-size:12px;
 
 color:#667566;
 
-min-height:55px;
+min-height:42px;
 
 }
 
@@ -362,11 +363,11 @@ font-weight:600;
 
 .stChatInput textarea{
 
-border-radius:18px !important;
+border-radius:15px !important;
 
 font-size:18px;
 
-padding:14px;
+padding:10px;
 
 background:#FCFDFB;
 
@@ -382,7 +383,7 @@ text-align:center;
 
 color:#708670;
 
-font-size:13px;
+font-size:11px;
 
 margin-top:40px;
 
@@ -392,7 +393,7 @@ margin-top:40px;
 
 div[data-testid="column"] .stButton>button{
 
-height:70px;
+height:55px;
 
 background:#F4F8F1;
 
@@ -404,7 +405,7 @@ border:1px solid #D7E2D1;
 
 div[data-testid="column"] .stButton>button p{
 
-font-size:18px !important;
+font-size:15px !important;
 
 font-weight:600 !important;
 
