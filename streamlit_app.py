@@ -12,7 +12,18 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-API_URL = "http://127.0.0.1:8000/chat"
+API_URL = "https://nexusfreight-api.onrender.com/chat"
+
+def ask_backend(question):
+    response = requests.post(
+        API_URL,
+        json={"message": question},
+        timeout=120
+    )
+
+    response.raise_for_status()
+
+    return response.json()
 
 # ==========================================================
 # SESSION
@@ -734,51 +745,13 @@ Generating Response...
 
         try:
 
-            response = requests.post(
+            result = ask_backend(prompt)
 
-                API_URL,
-
-                json={
-                    "message": prompt,
-                    "history": st.session_state.messages
-                },
-
-                timeout=180
-
-            )
-
-            if response.status_code == 200:
-
-                result = response.json()
-
-                answer = result.get(
-                    "bot_response",
-                    "No response generated."
-                )
-
-                source = result.get(
-                    "source",
-                    "Unknown"
-                )
-
-                query = result.get(
-                    "query_type",
-                    "Unknown"
-                )
-
-            else:
-
-                answer = f"""
-❌ Request Failed
-
-Status Code : {response.status_code}
-"""
-
-                source = "Unavailable"
-                query = "API Error"
+            answer = result.get("bot_response", "No response generated.")
+            source = result.get("source", "Unknown")
+            query = result.get("query_type", "Unknown")
 
         except Exception as e:
-
             answer = f"""
 ❌ Unable to connect to FastAPI.
 
